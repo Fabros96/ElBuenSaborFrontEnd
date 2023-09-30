@@ -9,5 +9,5 @@ Intregrantes:
  - Joaquin Cortez
  - Exequiel Buxó
    
-Nombre de equipo : JAWA SCRIPT
-Repositorio para la materia Desarrollo de Software, de UTN FRM, cursada en el segundo semestre del año 2023
+#Nombre de equipo : JAWA SCRIPT
+#Repositorio para la materia Desarrollo de Software, de UTN FRM, cursada en el segundo semestre del año 2023
