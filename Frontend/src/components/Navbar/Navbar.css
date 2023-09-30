@@ -1,0 +1,51 @@
+.NavContainer {
+    width: autonpm start;
+   padding: 0.4rem;
+   background-color: #242424;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+
+}
+
+ .NavContainer h2 {
+   color: #FFF;
+   font-weight: 400;
+   font-size: 2.5rem;
+   span {
+      font-weight: bold;
+   }
+}
+
+.NavContainer a {
+    color: #FFF;
+    text-decoration: none;
+    margin-right: 1rem;
+}
+.NavContainer img {
+    width: 5rem;
+ }
+
+.Btn-MenuHmb{
+    color: #FFF;
+}
+@media(min-width: 769px){
+    .Btn-MenuHmb{
+        display: none;
+    }
+}
+ @media(max-width: 769px){
+    .NavContainer a {
+        display: none;
+    }
+} 
+
+.IniciarSesion a{
+    background: #0074E0;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.IniciarSesion :hover{
+    background: #E63946;
+}
