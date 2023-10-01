@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import '../styles/Home.css'
-import Articulo from '../components/ArticuloHome'
+import './Home.css'
+import Articulo from './homeComponents/ArticuloHome'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
 import EastIcon from '@mui/icons-material/East'
 import ChecklistIcon from '@mui/icons-material/Checklist'

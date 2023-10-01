@@ -1,0 +1,41 @@
+* {
+   margin: 0;
+   padding: 0;
+}
+
+.cardContainer {
+   display: flex;
+   flex-direction: row;
+   gap: 2%;
+   width: 100%;
+   border-radius: 16px;
+   height: 6vh;
+   border-style: solid;
+   border-color: #abaaaa;
+}
+
+.cardInfo {
+   width: 80%;
+   height: 100%;
+   display: flex;
+   flex-direction: column;
+}
+
+.cardName {
+   text-align: center;
+   font-size: large;
+}
+.cardEdit {
+   display: flex;
+   align-items: center;
+}
+
+.cardStatus {
+   text-align: center;
+   font-size: medium;
+}
+.editIcon {
+   font-size: large;
+   text-align: center;
+   justify-content: center;
+}

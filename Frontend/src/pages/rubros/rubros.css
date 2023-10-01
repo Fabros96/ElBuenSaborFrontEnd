@@ -1,0 +1,41 @@
+* {
+   margin: 0;
+   padding: 0;
+}
+.container {
+   margin-top: 20%;
+   display: flex;
+   flex-direction: row;
+   justify-content: space-evenly;
+   width: 100%;
+   gap: 10%;
+}
+.RubroContainer {
+   width: 30%;
+   display: flex;
+   flex-direction: column;
+   gap: 5vh;
+}
+.RubroListTitle {
+   width: 100%;
+   display: flex;
+   flex-direction: row;
+   justify-content: space-evenly;
+}
+.titulo {
+   text-align: center;
+   width: 80%;
+   font-size: larger;
+}
+.Add {
+   border-color: transparent;
+   background-color: transparent;
+}
+.AddIcon {
+   font-size: large;
+}
+.RubroList {
+   display: flex;
+   flex-direction: column;
+   margin-top: 5%;
+}
