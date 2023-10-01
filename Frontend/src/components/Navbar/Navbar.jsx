@@ -1,32 +1,36 @@
 import React from 'react'
 import './Navbar.css'
-import logo_sintexto from '../images/Logo-sintexto.svg';
-import { Divide as MenuHmb } from 'hamburger-react'
+import Container from 'react-bootstrap/Container'
+import Nav from 'react-bootstrap/Nav'
+import Navbar from 'react-bootstrap/Navbar'
+import NavDropdown from 'react-bootstrap/NavDropdown'
+import Button from 'react-bootstrap/Button'
+import logo from '../../logo.svg'
 
-function Navbar() {
+function barra_navegacion() {
    return (
-      <>
-         {
-            <div className="NavContainer">
-              <img src={logo_sintexto} />
-               <h2>
-                  <span>El Buen Sabor</span>
-               </h2>
-               <div className = 'IniciarSesion'>  <a>Log in</a> </div>
-               <div className="NavLinks">
-                  <a href="/">Inicio</a>
-                  <a href="/">Categorias</a>
-                  <a href="/"></a>
-                  <a href="/">Acceder</a>
-                  <a href="/">Nuevo</a>
-               </div>
-               <div className="Btn-MenuHmb">
-                  <MenuHmb />
-               </div>
-            </div>
-         }
-      </>
+      <Navbar sticky="top" expand="lg" className="NavContainer">
+         <Container>
+            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+            <Navbar.Collapse id="basic-navbar-nav">
+               <a href="/" ><img alt="Logo El Buen Sabor" src={logo} className="logo-navbar" /></a>
+               <Nav className="centro-navbar">
+               <Nav.Link href="/" className='btn-navbar'>Inicio</Nav.Link>
+                  <NavDropdown title="Categorias" id="basic-nav-dropdown" className='btn-navbar'>
+                     <NavDropdown.Item href="#">Hamburguesas</NavDropdown.Item>
+                     <NavDropdown.Item href="#">Pollo Frito</NavDropdown.Item>
+                     <NavDropdown.Item href="#">Panchos</NavDropdown.Item>
+                     <NavDropdown.Item href="#">Bebidas</NavDropdown.Item>
+                     <NavDropdown.Item href="#">Donas</NavDropdown.Item>
+                  </NavDropdown>
+                  <Nav.Link href="/Promociones" className='btn-navbar'>Promociones</Nav.Link>
+                  <Nav.Link href="/Contact Us" className='btn-navbar'>Contactanos</Nav.Link>
+               </Nav>
+               <Button variant="primary" href='/login'>Ingresar</Button>{' '}
+            </Navbar.Collapse>
+         </Container>
+      </Navbar>
    )
 }
 
-export default Navbar
+export default barra_navegacion

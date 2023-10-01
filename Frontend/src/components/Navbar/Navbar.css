@@ -1,5 +1,5 @@
 .NavContainer {
-    width: autonpm start;
+    width: auto;
    padding: 0.4rem;
    background-color: #242424;
    display: flex;
@@ -23,18 +23,51 @@
     margin-right: 1rem;
 }
 .NavContainer img {
-    width: 5rem;
+    width: 3.5rem;
+    cursor: pointer;
  }
 
 .Btn-MenuHmb{
     color: #FFF;
 }
+
+.dropdown-menu{
+    background-color: #242424;
+
+}
+
+.navbar-nav .nav-link.active, .navbar-nav .nav-link.show {
+    color: rgb(255 173 5);
+}
+
+.nav-link:hover, .nav-link:focus {
+    color: rgb(255 173 5);
+}
+
+.dropdown-item:hover, .dropdown-item:focus{
+    color: var(--bs-dropdown-link-hover-color);
+    background-color: #ffad05;
+}
+
+.btn-navbar{
+    height: fit-content;
+}
+
 @media(min-width: 769px){
     .Btn-MenuHmb{
         display: none;
     }
+    .centro-navbar{
+        display: flex;
+        align-items: stretch;
+        margin-left: 250px;
+        margin-right: 250px;
+    }
 }
  @media(max-width: 769px){
+    .logo-navbar{
+        display: none;
+    }
     .NavContainer a {
         display: none;
     }
