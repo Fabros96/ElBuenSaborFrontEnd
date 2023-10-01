@@ -33,7 +33,8 @@ export const Home = () => {
       }
    }
    return (
-      <div>
+      <div className="container">
+         <div className="header"></div>
          <div className="welcomeView">
             <h1 className="title">El buen sabor</h1>
             <div className="lema">
