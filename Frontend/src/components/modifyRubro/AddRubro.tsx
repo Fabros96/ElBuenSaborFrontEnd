@@ -3,15 +3,15 @@ import Button from '@mui/material/Button'
 import Dialog from '@mui/material/Dialog'
 import DialogContent from '@mui/material/DialogContent'
 import DialogTitle from '@mui/material/DialogTitle'
-import './ModifyRubro.css'
-import DropDown from '../rubroComponents/DropDown'
-import { Rubro } from '../../../models/rubro'
-import EditIcon from '@mui/icons-material/Edit'
+import AddIcon from '@mui/icons-material/Add'
+import './AddRubro.css'
+import DropDown from '../../pages/rubros/rubroComponents/DropDown'
+import { Rubro } from '../../models/rubro'
 
 interface Props {
-   handleFormEditSubmit: (rubro: Rubro) => void
+   handleFormSubmit: (rubro: Rubro) => void
 }
-export default function ModifyRubro(props: Props) {
+export default function AddRubro(props: Props) {
    const [open, setOpen] = React.useState(false)
    const [name, setName] = React.useState('')
    const [status, setStatus] = React.useState('')
@@ -28,13 +28,13 @@ export default function ModifyRubro(props: Props) {
       event.preventDefault()
       //const test = await postRubro(name, status)
       const rubro = { name: name, status: status }
-      props.handleFormEditSubmit(rubro)
+      props.handleFormSubmit(rubro)
       handleClose()
    }
    return (
       <div className="AddButton">
          <Button onClick={handleClickOpen}>
-            <EditIcon className="AddIcon" />
+            <AddIcon className="AddIcon" />
          </Button>
          <Dialog
             open={open}
@@ -43,10 +43,10 @@ export default function ModifyRubro(props: Props) {
             aria-describedby="alert-dialog-description"
             maxWidth="xl"
          >
-            <DialogTitle> Modificar rubro: </DialogTitle>
+            <DialogTitle> Añadir nuevo rubro: </DialogTitle>
             <DialogContent>
                <form onSubmit={(e) => handleSubmit(e)}>
-                  <p>Nombre del rubro:</p>
+                  <p>Ingrese el nombre del rubro:</p>
                   <br />
                   <input
                      type="text"
@@ -57,7 +57,7 @@ export default function ModifyRubro(props: Props) {
                      onChange={(e: React.ChangeEvent<HTMLInputElement>) => setName(e.target.value)}
                   />
                   <br />
-                  <p>Estado del rubro</p>
+                  <p>Ingrese el estado del rubro</p>
                   <DropDown setStatus={setStatus} status={status} />
                   <br />
                   <input type="submit" className="confirmar" />

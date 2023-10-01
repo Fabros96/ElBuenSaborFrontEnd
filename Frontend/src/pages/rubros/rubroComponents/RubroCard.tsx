@@ -1,5 +1,4 @@
 import React from 'react'
-import EditIcon from '@mui/icons-material/Edit'
 import './RubroCard.css'
 import ModifyRubro from './ModifyRubro'
 import { Rubro } from '../../../models/rubro'
