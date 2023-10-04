@@ -1,11 +1,9 @@
 import * as React from 'react'
-import { useState , useEffect} from 'react'
+import { useState, useEffect } from 'react'
 import './Navbar.css'
 import logo from '../../logo.svg'
 import Container from 'react-bootstrap/Container'
-import Nav from 'react-bootstrap/Nav'
-import Navbar from 'react-bootstrap/Navbar'
-import NavDropdown from 'react-bootstrap/NavDropdown'
+import { Nav, Navbar, NavDropdown } from 'react-bootstrap'
 import Button from '@mui/material/Button'
 import AccountCircleSharpIcon from '@mui/icons-material/AccountCircleSharp'
 import LocalGroceryStoreOutlinedIcon from '@mui/icons-material/LocalGroceryStoreOutlined'
@@ -15,6 +13,7 @@ import { styled, alpha } from '@mui/material/styles'
 import InputBase from '@mui/material/InputBase'
 import SearchIcon from '@mui/icons-material/Search'
 
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 /* ----------------------ESTO ES PARA LA BARRA DE BUSQUEDA-------------------------- */
 const Search = styled('div')(({ theme }) => ({
@@ -76,24 +75,27 @@ function barra_navegacion() {
    const [show, setShow] = useState(false)
    const controlNavbar = () => {
       if (window.scrollY > 100) {
-         setShow( true )
+         setShow(true)
       } else {
-         setShow( false )
+         setShow(false)
       }
    }
    useEffect(() => {
-      window.addEventListener('scroll',
-      controlNavbar)
+      window.addEventListener('scroll', controlNavbar)
       return () => {
-         window.removeEventListener('scroll',
-         controlNavbar)
+         window.removeEventListener('scroll', controlNavbar)
       }
-   },[]) 
+   }, [])
    return (
-      //<Navbar expand="lg" className='NavContainer'>
-      <Navbar expand="lg" fixed='top' className={`NavContainer   mostrar-navbar ${show && 'ocultar-navbar'}`} >
-         <Container className="contenedor-nav">
-            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar
+         expand="lg"
+         fixed="top"
+         className={`navbar-contenedor-gral mostrar-navbar ${show && 'ocultar-navbar'}`}
+      >
+         <Container
+            className={`NavContainer contenedor-nav desktop-nav-container mostrar-navbar ${show &&
+               'ocultar-navbar'}`}
+         >
             <Navbar.Collapse id="basic-navbar-nav">
                <a href="/">
                   <img alt="Logo de El Buen Sabor" src={logo}></img>
@@ -124,11 +126,11 @@ function barra_navegacion() {
                      </Button>
                   </Stack>
                   {/* -------------Barra de Busqueda------------- */}
-                  <SearchAppBar className='centro-navbar-item' />
+                  <SearchAppBar className="centro-navbar-item" />
                </Nav>
-               <Stack direction="row" spacing={2} className='derecha-navbar'>
+               <Stack direction="row" spacing={2} className="derecha-navbar">
                   <Button variant="contained" startIcon={<LocalGroceryStoreOutlinedIcon />} href="/Carrito">
-                     Mis Compras
+                     Mi Carrito
                   </Button>
                   <Button
                      variant="outlined"
@@ -141,11 +143,51 @@ function barra_navegacion() {
                </Stack>
             </Navbar.Collapse>
          </Container>
+         {/* ------------------------/ARRIBA NAVBAR DESKTOP//ABAJO NAVBAR MOBILE/--------------------------------------------------- */}
+         <div fixed="top" className={`NavContainer contenedor-nav mobile-nav-container mostrar-navbar `}>
+            <Navbar collapseOnSelect className='mobile-nav-container' expand="lg">
+               <img
+                  alt="Logo de El Buen Sabor"
+                  width="30"
+                  height="30"
+                  src={logo}
+                  className="d-inline-block align-top"
+               />
+               <SearchAppBar className="centro-navbar-item" />
+               <Stack direction="row" spacing={2} className="derecha-navbar">
+                  <Button
+                     variant="contained"
+                     startIcon={<LocalGroceryStoreOutlinedIcon />}
+                     href="/Carrito"
+                  ></Button>
+                  <Button
+                     variant="outlined"
+                     startIcon={<AccountCircleSharpIcon />}
+                     className="btn-usuario"
+                     href="/Login"
+                  ></Button>
+               </Stack>
+               <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+               <Navbar.Collapse id="responsive-navbar-nav">
+                  <Nav className="mr-auto">
+                     <Nav.Link href="/" className="centro-navbar-item centro-navbar-item-mobile">
+                        Inicio
+                     </Nav.Link>
+                     <NavDropdown title="Categorias" id="basic-nav-dropdown" className="centro-navbar-item centro-navbar-item-mobile">
+                        <NavDropdown.Item className="centro-navbar-item centro-navbar-item-mobile" href="/#">Hamburguesas</NavDropdown.Item>
+                        <NavDropdown.Item className="centro-navbar-item centro-navbar-item-mobile" href="/#">Pollo Frito</NavDropdown.Item>
+                        <NavDropdown.Item className="centro-navbar-item centro-navbar-item-mobile" href="/#">Panchos</NavDropdown.Item>
+                        <NavDropdown.Item className="centro-navbar-item centro-navbar-item-mobile" href="/#">Bebidas</NavDropdown.Item>
+                        <NavDropdown.Item className="centro-navbar-item centro-navbar-item-mobile" href="/#">Donas</NavDropdown.Item>
+                     </NavDropdown>
+                     <Nav.Link href="/Promos" className="centro-navbar-item centro-navbar-item-mobile">
+                        Promos
+                     </Nav.Link>
+                  </Nav>
+               </Navbar.Collapse>
+            </Navbar>
+         </div>
       </Navbar>
    )
-}export default barra_navegacion;
-
-
-
-
-
+}
+export default barra_navegacion

@@ -5,7 +5,7 @@ import './Footer.css'
 
 const mi_footer = () => {
    return (
-      <div className="shadow">
+      <div fixed='bottom' className="shadow">
          <CDBBox
             display="flex"
             justifyContent="between"
@@ -38,3 +38,4 @@ const mi_footer = () => {
    )
 }
 export default mi_footer
+ 
