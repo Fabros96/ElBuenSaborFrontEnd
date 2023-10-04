@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cajero</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="./Cajero.css">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav class="navbar bg-body-white">
+        <div class="container-fluid">
+            <div class="top">
+                <a href="#" >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-caret-left" viewBox="0 0 16 16">
+                        <path d="M10 12.796V3.204L4.519 8 10 12.796zm-.659.753-5.48-4.796a1 1 0 0 1 0-1.506l5.48-4.796A1 1 0 0 1 11 3.204v9.592a1 1 0 0 1-1.659.753z"/>
+                    </svg>
+                    Volver
+                </a>
+            </div>
+            <span class="nombre">
+                <svg xmlns="http://www.w3.org/2000/svg"  width="26" height="26" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                    <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                </svg>
+                Nombre y Apellido
+            </span>
+        </div>
+        <hr class="separador">
+        
+        <h2 class="txt-Pedidos">Historial Pedidos</h2>
+        <div class="slt-busc">
+            <div class="slt-Estado"> Estado Pedido
+                <select name="EstadoPedido" id="EstadoPedido">
+                    <option value="A-confirmar">A Confirmar</option>
+                    <option value="En-camino">En camino</option>
+                    <option value="Listo">Listo</option>
+                    <option value="En-delivery">En delivery</option>
+                    <option value="Entregado">Entregado</option>
+                </select>
+            </div>
+            <div class="Buscador">
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="numero pedido" aria-label="Buscar">
+                </form>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="grid text-center">
+        <div class="g-col-6">
+            <table id="example" class="table table-striped" >
+                <thead>
+                    <tr>
+                        <th scope="col">Pedido Numero</th>
+                        <th scope="col">Fecha</th>
+                        <th scope="col">Precio</th>
+                    </tr>
+                </thead>
+                <tbody id="pedidoTableBody">
+                    <tr onclick="mostrarDetallePedido(1)">
+                        <th scope="row">1</th>
+                        <td>28/09/23</td>
+                        <td>$10000</td>
+                    </tr>
+                    <tr onclick="mostrarDetallePedido(2)">
+                        <th scope="row">2</th>
+                        <td>27/09/23</td>
+                        <td>$3500</td>
+                    </tr>
+                    <tr onclick="mostrarDetallePedido(3)">
+                        <th scope="row">3</th>
+                        <td>27/09/23</td>
+                        <td>$7000</td>
+                    </tr>
+                    <tr onclick="mostrarDetallePedido(4)">
+                        <th scope="row">4</th>
+                        <td>28/09/23</td>
+                        <td>$10000</td>
+                    </tr>
+                    <tr onclick="mostrarDetallePedido(5)">
+                        <th scope="row">5</th>
+                        <td>27/09/23</td>
+                        <td>$3500</td>
+                    </tr>
+                    <tr onclick="mostrarDetallePedido(6)">
+                        <th scope="row">6</th>
+                        <td>27/09/23</td>
+                        <td>$7000</td>
+                    </tr>
+                    <tr onclick="mostrarDetallePedido(7)">
+                        <th scope="row">7</th>
+                        <td>28/09/23</td>
+                        <td>$10000</td>
+                    </tr>
+                    <tr onclick="mostrarDetallePedido(8)">
+                        <th scope="row">8</th>
+                        <td>27/09/23</td>
+                        <td>$3500</td>
+                    </tr>
+                    <tr onclick="mostrarDetallePedido(9)">
+                        <th scope="row">9</th>
+                        <td>27/09/23</td>
+                        <td>$7000</td>
+                    </tr>
+                    <tr onclick="mostrarDetallePedido(10)">
+                        <th scope="row">10</th>
+                        <td>28/09/23</td>
+                        <td>$10000</td>
+                    </tr>
+                    <tr onclick="mostrarDetallePedido(11)">
+                        <th scope="row">11</th>
+                        <td>27/09/23</td>
+                        <td>$3500</td>
+                    </tr>
+                    <tr onclick="mostrarDetallePedido(12)">
+                        <th scope="row">12</th>
+                        <td>27/09/23</td>
+                        <td>$7000</td>
+                    </tr>
+                    <tr onclick="mostrarDetallePedido(13)">
+                        <th scope="row">13</th>
+                        <td>28/09/23</td>
+                        <td>$10000</td>
+                    </tr>
+                    <tr onclick="mostrarDetallePedido(14)">
+                        <th scope="row">14</th>
+                        <td>27/09/23</td>
+                        <td>$3500</td>
+                    </tr>
+                    <tr onclick="mostrarDetallePedido(15)">
+                        <th scope="row">15</th>
+                        <td>27/09/23</td>
+                        <td>$7000</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="g-col-61">
+            <div class="detalle-Pedido" id="detallePedido">
+                <p>Pedido: </p>
+                <p>Fecha: </p>
+                <p>Forma de entrega:</p>
+                <p>Metodo de pago: </p>
+                <p>SubTotal: $</p>
+                <p>Descuento: $</p>
+                <p>Total:$ </p>
+                <p>Articulos:</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function mostrarDetallePedido(numeroPedido) {
+            let detallePedido = document.getElementById('detallePedido');
+
+            // Simulación de datos del pedido (reemplaza con datos reales)
+            let fecha = '28/09/23';
+            let metodoPago = 'Tarjeta de crédito';
+            let Formaentrega= 'Delivery'
+            let SubTotal = '$10000';
+            let descuento = '$2000';
+            let Total = '$8000';
+            let articulos = 'Producto 1, Producto 2';
+
+            // Actualizar el contenido del contenedor del detalle del pedido
+            detallePedido.innerHTML =  `
+                <p>Pedido: ${numeroPedido}</p>
+                <p>Fecha: ${fecha}</p>
+                <p>Fecha: ${Formaentrega}</p>
+                <p>Método de pago: ${metodoPago}</p>
+                <p>SubTotal: ${SubTotal}</p>
+                <p>Descuento: ${descuento}</p>
+                <p>Total:${Total}</p>
+                <p>Artículos: ${articulos}</p>
+                 `
+        }
+    </script>
+
+</body>
+</html>
