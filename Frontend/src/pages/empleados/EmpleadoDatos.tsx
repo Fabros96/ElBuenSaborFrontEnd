@@ -1,7 +1,12 @@
-import React, { useState } from 'react'
+import React, { } from 'react'
+import '../styles/EmpleadoDatos.css'
+import {useForm} from 'react-hook-form'
 
-function EmpData(){
+function EmpleadoDatos(){
+    const {register} = useForm()
     return(
+        <div className="cuerpo">
+
         <form>
 
             <button>
@@ -12,13 +17,19 @@ function EmpData(){
             <input type='file'/>
 
             <label htmlFor='nombre'>Nombre</label>
-            <input type='text'/>
+            <input type='text'
+            {...register("nombre")}
+            />
 
             <label htmlFor='apellido'>Apellido</label>
-            <input type='text'/>
+            <input type='text'
+            {...register("apellido")}
+            />
 
             <label htmlFor='email'>Email</label>
-            <input type='email'/>
+            <input type='email'
+            {...register("email")}            
+            />
 
             <label htmlFor='password'>Password</label>
             <input type='password'/>
@@ -31,6 +42,7 @@ function EmpData(){
 
             <label htmlFor='departamento'>Seleccionar departamento</label>
             <select>
+                <option value="de">Departamento </option>
                 <option value="ca">Capital </option>
                 <option value="gu">Guaymallen</option>
                 <option value="he">Las Heras</option>
@@ -59,8 +71,9 @@ function EmpData(){
             </button>
         </form>
 
+        </div>
     )
 
 }
 
-export default EmpData
+export default EmpleadoDatos
