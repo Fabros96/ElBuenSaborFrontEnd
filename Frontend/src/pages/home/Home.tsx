@@ -7,6 +7,7 @@ import ChecklistIcon from '@mui/icons-material/Checklist'
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney'
 import MopedIcon from '@mui/icons-material/Moped'
 import RestaurantIcon from '@mui/icons-material/Restaurant'
+// import { Scrollbars } from 'react-custom-scrollbars'
 
 export const Home = () => {
    const [promo, setPromo] = React.useState(true)
@@ -120,6 +121,7 @@ export const Home = () => {
                {promo === true && (
                   <>
                      <h2 className="promoTexto">Promociones</h2>
+
                      <div className="promociones">
                         <div>
                            <Articulo
