@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RegistroCompras</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="./RegistroCompras.css">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <nav class="navbar bg-body-white">
+        <div class="container-fluid">
+            <div class="top">
+                <a href="#" >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-caret-left" viewBox="0 0 16 16">
+                        <path d="M10 12.796V3.204L4.519 8 10 12.796zm-.659.753-5.48-4.796a1 1 0 0 1 0-1.506l5.48-4.796A1 1 0 0 1 11 3.204v9.592a1 1 0 0 1-1.659.753z"/>
+                    </svg>
+                    Volver
+                </a>
+            </div>
+            <span class="nombre">
+                <svg xmlns="http://www.w3.org/2000/svg"  width="26" height="26" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                    <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                </svg>
+                Nombre y Apellido
+            </span>
+        </div>
+        <hr class="separador">
+        <div class="producto">
+            <h2>Registro de Compras</h2>
+            
+            <a href="#" class="navbar-brand" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"/>
+                </svg>
+            </a>
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="exampleModalLabel">Añadir Compra</h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Nombre Ingrediente: <input type="text"></p>
+                        <p>Rubro: <select id="Rubro" name="Rubro">
+                            <option value="Rubro1">Rubro1</option>
+                            <option value="Rubro2">Rubro2</option>
+                        </select>
+                        <p>Cantidad: <input type="number"step="1"min="0"></p>
+                    <p>Precio Costo: $<input type="number" step="0.1" min="0"></p>
+                    <p>Unidad de Medida: <select id="Estado" name="Estado">
+                        <option value="KG">Alta</option>
+                        <option value="Por unidad">Baja</option>
+                    </select></p>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                      <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="mostrarMensaje()">Confirmar</button>
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+    </nav>
+
+    <div class="tabla">
+        <table id="example" class="table table-striped" style="width:100%;">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col1">Nombre Ingrediente</th> 
+                    <th scope="col">Rubro</th>
+                    <th scope="col1">Cantidad</th>
+                    <th scope="col">Precio Costo</th>
+                    <th scope="col1">Unidad de Medida</th>
+                </tr>
+            </thead>  
+            <tbody class="table-group-divider">
+                <tr>
+                    <th scope="row">1</th>
+                    <td>hamburguesa1</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                    <td>asd</td>
+                    <td>asdaf</td>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>hamburguesa1</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                    <td>asd</td>
+                    <td>asdaf</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>hamburguesa1</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                    <td>asd</td>
+                    <td>asdaf</td>
+                </tr>
+                <tr>
+                    <th scope="row">4</th>
+                    <td>hamburguesa1</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                    <td>asd</td>
+                    <td>asdaf</td>
+                </tr>
+                <tr>
+                    <th scope="row">5</th>
+                    <td>hamburguesa1</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                    <td>asd</td>
+                    <td>asdaf</td>
+                </tr>
+                <tr>
+                    <th scope="row">6</th>
+                    <td>hamburguesa1</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                    <td>asd</td>
+                    <td>asdaf</td>
+                </tr>
+                <tr>
+                    <th scope="row">6</th>
+                    <td>hamburguesa1</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                    <td>asd</td>
+                    <td>asdaf</td>
+                </tr>
+                <tr>
+                    <th scope="row">6</th>
+                    <td>hamburguesa1</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                    <td>asd</td>
+                    <td>asdaf</td>
+                </tr>
+                <tr>
+                    <th scope="row">6</th>
+                    <td>hamburguesa1</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                    <td>asd</td>
+                    <td>asdaf</td>
+                </tr>
+                <tr>
+                    <th scope="row">6</th>
+                    <td>hamburguesa1</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                    <td>asd</td>
+                    <td>asdaf</td>
+                </tr>
+                <!-- ... Podes agregar los productos que necesites -->
+            </tbody>
+        </table>
+    </div>
+    <script>
+        const myModal = document.getElementById('myModal')
+    const myInput = document.getElementById('myInput')
+    
+    myModal.addEventListener('shown.bs.modal', () => {
+      myInput.focus()
+    })
+    </script>
+    <!--
+    <script>
+        function mostrarMensaje() {
+          const alerta = `
+          <div id ="mensaje" class="alert alert-success d-flex align-items-center alert-center" role="alert">
+            <svg class="bi flex-shrink-0 me-2" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
+            <div>
+            An example success alert with an icon
+             </div>
+           </div>
+           `;
+      
+          // Agrega la alerta al cuerpo del documento
+          document.body.insertAdjacentHTML('beforeend', alerta);
+      
+          // Elimina la alerta después de 2 segundos
+          setTimeout(() => {
+            const mensaje = document.getElementById('mensaje');
+            if (mensaje) {
+              mensaje.remove();
+            }
+          }, 2000);
+        }
+      </script>
+      -->
+      
+</body>
+</html>

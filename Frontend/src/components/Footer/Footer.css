@@ -1,0 +1,26 @@
+.shadow,
+.shadow span {
+   background-color: #242424;
+   color: white;
+}
+.shadow {
+   margin-top: auto;
+   width: auto;
+   min-width: 100vw;
+}
+
+.shadow a {
+   color: #242424;
+}
+
+.sc-jXbUNg {
+   background-color: white !important;
+}
+
+.hHZDcS:hover {
+   background-color: #fea905 !important;
+}
+
+.footer-nombre:hover {
+   color: #fea905 !important;
+}

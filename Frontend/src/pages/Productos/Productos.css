@@ -1,0 +1,55 @@
+*{
+    font-family: sans-serif;
+}
+.top a{
+    text-decoration: none;
+    color: black;
+    font-size: 1.3rem;
+    font-family:sans-serif 
+
+}
+h2{
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-top: 3%;
+}
+.producto{
+    margin-left: 2.5%;
+}
+.producto svg{
+    margin-bottom: 30%;
+    font-weight: bold;
+}
+.buscador{
+margin-right: 2%;
+}
+.separador{
+    height: 1px;
+    color: rgba(65, 64, 64, 0.548);
+    width: 95%;
+    margin: 0 auto;
+    margin-bottom: 0.3rem;
+}
+.tabla{
+    color:grey;
+    width: 95%;
+    margin-left: 2.5%;
+    max-height: 500px; /* Altura máxima para mostrar el scroll en el cuerpo de la tabla */
+    overflow-y: auto; /* Desplazamiento vertical solo en el cuerpo de la tabla */
+}
+.form-control{
+    background-color: #f3f3f2;
+}
+
+.table thead th {
+    position: sticky;
+    top: 0;
+    background-color: #f9f9f9;
+}
+
+@media (max-width: 576px){
+.tabla{
+    max-height: 730px;
+    overflow-y: auto;
+}
+}

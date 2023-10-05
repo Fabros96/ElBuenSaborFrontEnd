@@ -1,0 +1,90 @@
+*{
+    font-family: sans-serif;
+}
+.top a{
+    text-decoration: none;
+    color: black;
+    font-size: 1.3rem;
+    font-family:sans-serif;
+    
+}
+.txt-Pedidos{
+    font-size: 1.3rem;
+    font-weight: bold;
+    padding-left: 2.5%;
+}
+.nombre{
+    margin-right: 1.5%;
+}
+
+.separador{
+    height: 1px;
+    color: rgba(65, 64, 64, 0.548);
+    width: 95%;
+    margin: 0 auto;
+    margin-bottom: 0.3rem;
+}
+.slt-busc{
+    display:flex ;
+    padding-right: 40%;
+    margin-bottom: 0.5%;
+}
+.slt-Estado{
+    margin-right: 0;
+    margin-top: 1.5%;
+    width: 120%;
+}
+.Buscador{
+    width: 100%;
+    padding-left: 15%;
+}
+.grid {
+    display: grid;
+    grid-template-columns: 1.4fr 0.6fr; /* Divide en dos columnas */
+    gap: 10px; /* Espacio entre columnas */
+}
+
+.table{
+width: 95%;
+margin-left: 3.5%;
+
+}
+.table thead th {
+    position: sticky;
+    top: 0;
+    background-color: #f9f9f9;
+}
+.tabla{
+    color:grey;
+}
+.form-control{
+    background-color: #f3f3f2;
+}
+.tabla , .g-col-6{
+    max-height: 600px; /* Altura máxima para mostrar el scroll en el cuerpo de la tabla */
+    overflow-y: auto; /* Desplazamiento vertical solo en el cuerpo de la tabla */
+}
+.col1{
+    background-color: #f9f9f9;
+}
+
+.detalle-Pedido{
+    background-color: #d9d9d9;
+    width: 88%;
+    text-align: left;
+
+}
+.detalle-Pedido, p{
+    margin-left: 0.5rem;
+    border-radius: 5px;
+}
+
+@media (max-width: 576px){
+.tabla{
+    max-height: 730px;
+    overflow-y: auto;
+}
+.grid{
+    grid-template-columns: 1fr 1fr;   
+}
+}
