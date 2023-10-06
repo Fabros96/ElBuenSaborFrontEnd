@@ -12,6 +12,7 @@ import lombok.Setter;
 import org.antlr.v4.runtime.misc.NotNull;
 
 import java.math.BigDecimal;
+import java.time.LocalTime;
 import java.util.Date;
 
 @Entity
@@ -30,7 +31,7 @@ public class Pedido extends Base {
     @NotNull
     @Column(name = "hora_estimada_finalizacion")
     @Temporal(TemporalType.TIMESTAMP)
-    private Date horaEstimadaFinalizacion;
+    private LocalTime horaEstimadaFinalizacion;
 
     @NotNull
     @Column(name = "total", precision = 10, scale = 2)
