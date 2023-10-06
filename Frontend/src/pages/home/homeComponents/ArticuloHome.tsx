@@ -7,6 +7,7 @@ import Button from '@mui/material/Button'
 import AddIcon from '@mui/icons-material/Add'
 import RemoveIcon from '@mui/icons-material/Remove'
 import './ArticuloHomePopup'
+import './ArticuloHome.css'
 import PopUp from './ArticuloHomePopup'
 
 interface Props {
