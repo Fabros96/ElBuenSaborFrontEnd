@@ -29,7 +29,6 @@ public class Pedido extends BaseFecha {
 
     @NotNull
     @Column(name = "hora_estimada_finalizacion")
-    @Temporal(TemporalType.TIMESTAMP)
     private LocalTime horaEstimadaFinalizacion;
 
     @NotNull

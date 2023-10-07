@@ -6,7 +6,6 @@ import lombok.*;
 import org.antlr.v4.runtime.misc.NotNull;
 
 import java.math.BigDecimal;
-import java.util.Date;
 
 @Entity
 @NoArgsConstructor

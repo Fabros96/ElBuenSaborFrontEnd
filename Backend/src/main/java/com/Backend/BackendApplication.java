@@ -76,6 +76,7 @@ public class BackendApplication {
 			user.setFechaBaja(null);
 			user.setFechaModificacion(null);
 			user.setUsername("holaGonzalez");
+			user.setPassword("password");
 			usuarioRepository.save(user);
 
 			cliente1.setUsuario(user);
@@ -105,6 +106,78 @@ public class BackendApplication {
 			pedido.setTotal(BigDecimal.valueOf(2500));
 			pedido.setTotalCosto(BigDecimal.valueOf(1200));
 			pedidoRepository.save(pedido);
+
+			Factura factura = new Factura();
+			factura.setFormaPago(EFECTIVO);
+			factura.setPedido(pedido);
+			factura.setFechaAlta(new Date(1-10-2023));
+			factura.setFechaBaja(null);
+			factura.setFechaModificacion(null);
+			factura.setFechaFacturacion(new Date(1-10-2023));
+			factura.setMpMerchantOrderId(1234567L);
+			factura.setMpPaymentType("Tarjeta?");
+			factura.setMpPaymentId(123L);
+			factura.setTotalVenta(BigDecimal.valueOf(5000));
+			factura.setMpPreferenceId("que es esto");
+			facturaRepository.save(factura);
+
+			RubroArticulo ra = new RubroArticulo();
+			ra.setDenominacion("carne");
+			ra.setFechaAlta(new Date(1-10-2023));
+			ra.setFechaBaja(null);
+			ra.setFechaModificacion(null);
+
+			RubroArticulo raPadre = new RubroArticulo();
+			RubroArticulo raHijo = new RubroArticulo();
+			RubroArticulo raHijo2 = new RubroArticulo();
+			raPadre.setDenominacion("algo");
+			raHijo.setDenominacion("algotmbn");
+			raHijo2.setDenominacion("algosii");
+			rubroArticuloRepository.save(raPadre);
+			rubroArticuloRepository.save(raHijo);
+			rubroArticuloRepository.save(raHijo2);
+
+			ra.setRubroPadre(raPadre);
+			ra.addSubRubro(raHijo);
+			ra.addSubRubro(raHijo2);
+			rubroArticuloRepository.save(ra);
+
+			UnidadMedida unidad = new UnidadMedida();
+			unidad.setDenominacion("unidad");
+			unidad.setAbreviatura("un");
+			unidadMedidaRepository.save(unidad);
+
+			ArticuloInsumo artInsumo = new ArticuloInsumo();
+			artInsumo.setDenominacion("carneHamburguesa");
+			artInsumo.setFechaAlta(new Date(1-10-2023));
+			artInsumo.setFechaBaja(null);
+			artInsumo.setFechaModificacion(null);
+			artInsumo.setPrecioCompra(BigDecimal.valueOf(1200));
+			artInsumo.setRubroArticulo(ra);
+			artInsumo.setStockActual(BigDecimal.valueOf(20));
+			artInsumo.setStockMinimo(BigDecimal.valueOf(8));
+			artInsumo.setUnidadMedida(unidad);
+			artInsumo.setUrlImagen("urlURLurlURLurlURL");
+			articuloInsumoRepository.save(artInsumo);
+
+			ArticuloManufacturado artMan = new ArticuloManufacturado();
+			artMan.setCosto(BigDecimal.valueOf(1200));
+			artMan.setDenominacion("hamburguesa");
+			artMan.setDescripcion("hamburguesa rica con panceta siuu");
+			artMan.setFechaAlta(new Date(1-10-2023));
+			artMan.setFechaBaja(null);
+			artMan.setFechaModificacion(null);
+			artMan.setPrecioVenta(BigDecimal.valueOf(2500));
+			artMan.setTiempoEstimadoCocina(20);
+			artMan.setUrlImagen("urlURLurlURLurlURL");
+			articuloManufacturadoRepository.save(artMan);
+
+			DetalleFactura df = new DetalleFactura();
+			df.setArticuloManufacturado(artMan);
+			df.setCantidad(2);
+			df.setFactura(factura);
+			df.setSubtotal(BigDecimal.valueOf(5000));
+			detalleFacturaRepository.save(df);
 
 
 //			DetallePedido detped = new DetallePedido();
