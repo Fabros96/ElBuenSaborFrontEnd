@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import './Home.css'
-import Articulo from './homeComponents/ArticuloHome'
+import ArticuloHome from './homeComponents/ArticuloHome'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
 import EastIcon from '@mui/icons-material/East'
 import ChecklistIcon from '@mui/icons-material/Checklist'
@@ -124,7 +124,7 @@ export const Home = () => {
 
                      <div className="promociones">
                         <div>
-                           <Articulo
+                           <ArticuloHome
                               image="https://recetasdeusa.com/wp-content/uploads/2022/05/Hamburguesa-americana-1-scaled.jpg"
                               nombre="hamburguesa"
                               precio={2500}
@@ -132,7 +132,7 @@ export const Home = () => {
                            />
                         </div>
                         <div>
-                           <Articulo
+                           <ArticuloHome
                               image="https://recetasdeusa.com/wp-content/uploads/2022/05/Hamburguesa-americana-1-scaled.jpg"
                               nombre="hamburguesa"
                               precio={2500}
@@ -140,7 +140,7 @@ export const Home = () => {
                            />
                         </div>
                         <div>
-                           <Articulo
+                           <ArticuloHome
                               image="https://recetasdeusa.com/wp-content/uploads/2022/05/Hamburguesa-americana-1-scaled.jpg"
                               nombre="hamburguesa"
                               precio={2500}
@@ -148,7 +148,7 @@ export const Home = () => {
                            />
                         </div>
                         <div>
-                           <Articulo
+                           <ArticuloHome
                               image="https://recetasdeusa.com/wp-content/uploads/2022/05/Hamburguesa-americana-1-scaled.jpg"
                               nombre="hamburguesa"
                               precio={2500}
@@ -156,7 +156,7 @@ export const Home = () => {
                            />
                         </div>
                         <div>
-                           <Articulo
+                           <ArticuloHome
                               image="https://recetasdeusa.com/wp-content/uploads/2022/05/Hamburguesa-americana-1-scaled.jpg"
                               nombre="hamburguesa"
                               precio={2500}
@@ -164,7 +164,7 @@ export const Home = () => {
                            />
                         </div>
                         <div>
-                           <Articulo
+                           <ArticuloHome
                               image="https://recetasdeusa.com/wp-content/uploads/2022/05/Hamburguesa-americana-1-scaled.jpg"
                               nombre="hamburguesa"
                               precio={2500}
@@ -172,7 +172,7 @@ export const Home = () => {
                            />
                         </div>
                         <div>
-                           <Articulo
+                           <ArticuloHome
                               image="https://recetasdeusa.com/wp-content/uploads/2022/05/Hamburguesa-americana-1-scaled.jpg"
                               nombre="hamburguesa"
                               precio={2500}
@@ -180,7 +180,7 @@ export const Home = () => {
                            />
                         </div>
                         <div>
-                           <Articulo
+                           <ArticuloHome
                               image="https://recetasdeusa.com/wp-content/uploads/2022/05/Hamburguesa-americana-1-scaled.jpg"
                               nombre="hamburguesa"
                               precio={2500}
@@ -188,7 +188,7 @@ export const Home = () => {
                            />
                         </div>
                         <div>
-                           <Articulo
+                           <ArticuloHome
                               image="https://recetasdeusa.com/wp-content/uploads/2022/05/Hamburguesa-americana-1-scaled.jpg"
                               nombre="hamburguesa"
                               precio={2500}
@@ -204,7 +204,7 @@ export const Home = () => {
                      <h2 className="promoTexto">Bebidas</h2>
                      <div className="promociones">
                         <div>
-                           <Articulo
+                           <ArticuloHome
                               image="https://deukoizarra.com/wp-content/uploads/2023/04/CocaCola-vidirio-350ml.jpg"
                               nombre="Coca Cola 350cc"
                               precio={450}
@@ -212,7 +212,7 @@ export const Home = () => {
                            />
                         </div>
                         <div>
-                           <Articulo
+                           <ArticuloHome
                               image="https://deukoizarra.com/wp-content/uploads/2023/04/CocaCola-vidirio-350ml.jpg"
                               nombre="Coca Cola 350cc"
                               precio={450}
@@ -220,7 +220,7 @@ export const Home = () => {
                            />
                         </div>
                         <div>
-                           <Articulo
+                           <ArticuloHome
                               image="https://deukoizarra.com/wp-content/uploads/2023/04/CocaCola-vidirio-350ml.jpg"
                               nombre="Coca Cola 350cc"
                               precio={450}
@@ -228,7 +228,7 @@ export const Home = () => {
                            />
                         </div>
                         <div>
-                           <Articulo
+                           <ArticuloHome
                               image="https://deukoizarra.com/wp-content/uploads/2023/04/CocaCola-vidirio-350ml.jpg"
                               nombre="Coca Cola 350cc"
                               precio={450}
@@ -236,7 +236,7 @@ export const Home = () => {
                            />
                         </div>
                         <div>
-                           <Articulo
+                           <ArticuloHome
                               image="https://deukoizarra.com/wp-content/uploads/2023/04/CocaCola-vidirio-350ml.jpg"
                               nombre="Coca Cola 350cc"
                               precio={450}
@@ -244,7 +244,7 @@ export const Home = () => {
                            />
                         </div>
                         <div>
-                           <Articulo
+                           <ArticuloHome
                               image="https://deukoizarra.com/wp-content/uploads/2023/04/CocaCola-vidirio-350ml.jpg"
                               nombre="Coca Cola 350cc"
                               precio={450}
@@ -252,7 +252,7 @@ export const Home = () => {
                            />
                         </div>
                         <div>
-                           <Articulo
+                           <ArticuloHome
                               image="https://deukoizarra.com/wp-content/uploads/2023/04/CocaCola-vidirio-350ml.jpg"
                               nombre="Coca Cola 350cc"
                               precio={450}
@@ -260,7 +260,7 @@ export const Home = () => {
                            />
                         </div>
                         <div>
-                           <Articulo
+                           <ArticuloHome
                               image="https://deukoizarra.com/wp-content/uploads/2023/04/CocaCola-vidirio-350ml.jpg"
                               nombre="Coca Cola 350cc"
                               precio={450}
@@ -268,7 +268,7 @@ export const Home = () => {
                            />
                         </div>
                         <div>
-                           <Articulo
+                           <ArticuloHome
                               image="https://deukoizarra.com/wp-content/uploads/2023/04/CocaCola-vidirio-350ml.jpg"
                               nombre="Coca Cola 350cc"
                               precio={450}
