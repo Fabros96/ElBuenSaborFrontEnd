@@ -2,10 +2,7 @@ package com.Backend.entities;
 
 import jakarta.persistence.*;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.antlr.v4.runtime.misc.NotNull;
 
 import java.util.Date;
@@ -16,7 +13,9 @@ import java.util.Date;
 @AllArgsConstructor
 @Getter
 @Setter
-public class Domicilio extends Base {
+@Builder
+
+public class Domicilio extends BaseFecha {
 
     @NotNull
     @Column(length = 500)

@@ -5,10 +5,7 @@ import com.Backend.enums.FormaPago;
 import com.Backend.enums.TipoEnvio;
 import jakarta.persistence.*;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.antlr.v4.runtime.misc.NotNull;
 
 import java.math.BigDecimal;
@@ -21,7 +18,9 @@ import java.util.Date;
 @AllArgsConstructor
 @Getter
 @Setter
-public class Pedido extends Base {
+@Builder
+
+public class Pedido extends BaseFecha {
 
     @NotNull
     @Column(name = "fecha_pedido")

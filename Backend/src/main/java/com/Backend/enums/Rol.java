@@ -1,4 +1,9 @@
 package com.Backend.enums;
 
-public class Rol {
+import com.Backend.entities.Cliente;
+
+public enum Rol {
+    ADMINISTRADOR,
+    CLIENTE,
+    EMPLEADO
 }

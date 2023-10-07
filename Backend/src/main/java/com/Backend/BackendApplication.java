@@ -53,12 +53,14 @@ public class BackendApplication {
 	}
 
 	@Bean
-	CommandLineRunner init(ClienteRepository clienteRepo, ArticuloInsumoRepository articuloInsumoRep, ArticuloManufacturadoRepository articuloManufacturadoRepo,
+	CommandLineRunner init(/*ClienteRepository clienteRepo, ArticuloInsumoRepository articuloInsumoRep, ArticuloManufacturadoRepository articuloManufacturadoRepo,
 						   DetalleArticuloManufacturadoRepository detalleArticuloManufacturadoRepo, DetalleFacturaRepository detalleFacturaRepo, DetallePedidoRepository detallePedidoRepo,
 							DomicilioRepository domicilioRepo, FacturaRepository facturaRepo, PedidoRepository pedidoRepo, RubroArticuloRepository rubroArticuloRepo,
-						   UnidadMedidaRepository unidadMedidaRepository, UsuarioRepository usuarioRepo){
+						   UnidadMedidaRepository unidadMedidaRepository, UsuarioRepository usuarioRepo*/){
 		return args -> {
 
+//			Cliente cliente = Cliente.builder().nombre("hola").apellido("Gutierrez").email("soyGutierrez@gmail.com").telefono("2604552255").build();
+//			cliente.setFechaAlta(new Date(1-10-2023));
 
 			Cliente cliente1 = new Cliente();
 			cliente1.setNombre("Hola :)");

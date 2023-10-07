@@ -3,10 +3,7 @@ package com.Backend.entities;
 import com.Backend.enums.FormaPago;
 import jakarta.persistence.*;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.antlr.v4.runtime.misc.NotNull;
 
 import java.math.BigDecimal;
@@ -18,7 +15,9 @@ import java.util.Date;
 @AllArgsConstructor
 @Getter
 @Setter
-public class Factura extends Base {
+@Builder
+
+public class Factura extends BaseFecha {
 
     @NotNull
     @Column(name = "fecha_facturacion")

@@ -1,11 +1,10 @@
 package com.Backend.entities;
 
+import com.Backend.enums.FormaPago;
+import com.Backend.enums.Rol;
 import jakarta.persistence.*;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.antlr.v4.runtime.misc.NotNull;
 
 import java.util.Date;
@@ -15,8 +14,9 @@ import java.util.Date;
 @AllArgsConstructor
 @Getter
 @Setter
+@Builder
 @Table(name = "usuario")
-public class Usuario extends Base {
+public class Usuario extends BaseFecha {
 
 //    NO IMPLEMENTAR, uso id de Base
 //    @NotNull
@@ -26,5 +26,15 @@ public class Usuario extends Base {
     @NotNull
     @Column(name = "username", nullable = false)
     private String username;
+
+    @NotNull
+    @Column(name = "password", nullable = false)
+    private String password;
+
+
+    @NotNull
+    @Column(name = "rol")
+    @Enumerated(EnumType.STRING)
+    private Rol rol;
 
 }

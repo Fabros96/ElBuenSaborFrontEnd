@@ -15,8 +15,10 @@ import java.util.Date;
 @AllArgsConstructor
 @Getter
 @Setter
+@Builder
+
 @ToString
-public class ArticuloManufacturado extends Base {
+public class ArticuloManufacturado extends BaseFecha {
 
     @NotNull
     private String denominacion;
