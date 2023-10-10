@@ -4,6 +4,8 @@ import com.Backend.entities.RubroArticulo;
 import com.Backend.repositories.BaseRepository;
 import com.Backend.repositories.RubroArticuloRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,5 +18,15 @@ public class RubroArticuloServiceImpl extends BaseServiceImpl<RubroArticulo, Lon
 
     public RubroArticuloServiceImpl(BaseRepository<RubroArticulo, Long> baseRepository) {
         super(baseRepository);
+    }
+
+    @Override
+    public List<RubroArticulo> search(String string) throws Exception {
+        return null;
+    }
+
+    @Override
+    public Page<RubroArticulo> search(String string, Pageable pageable) throws Exception {
+        return null;
     }
 }
