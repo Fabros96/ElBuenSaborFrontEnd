@@ -28,4 +28,6 @@ public class DetallePedidoController extends BaseControllerImpl<DetallePedido, D
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(("{\"error\": \"" + e.getMessage() + "\"}"));
         }
     }
+
+
 }

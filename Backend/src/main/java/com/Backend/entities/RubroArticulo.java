@@ -25,6 +25,7 @@ public class RubroArticulo extends BaseFecha {
     @JoinColumn(name = "id_rubro_padre")
     private RubroArticulo rubroPadre;
 
+    @Nullable
     @OneToMany(mappedBy = "rubroPadre")
     private List<RubroArticulo> subRubros = new ArrayList<RubroArticulo>();
 

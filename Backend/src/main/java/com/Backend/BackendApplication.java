@@ -77,6 +77,7 @@ public class BackendApplication {
 			user.setFechaModificacion(null);
 			user.setUsername("holaGonzalez");
 			user.setPassword("password");
+			user.setActivo(true);
 			usuarioRepository.save(user);
 
 			cliente1.setUsuario(user);

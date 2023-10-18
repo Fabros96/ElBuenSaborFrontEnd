@@ -6,7 +6,9 @@ import jakarta.persistence.*;
 
 import lombok.*;
 import org.antlr.v4.runtime.misc.NotNull;
+import org.springframework.beans.factory.annotation.Value;
 
+import java.beans.ConstructorProperties;
 import java.util.Date;
 
 @Entity
@@ -36,5 +38,9 @@ public class Usuario extends BaseFecha {
     @Column(name = "rol")
     @Enumerated(EnumType.STRING)
     private Rol rol;
+
+    @NotNull
+    @Column(name = "activo", nullable = false)
+    private Boolean activo;
 
 }

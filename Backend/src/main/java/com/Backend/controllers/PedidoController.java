@@ -29,6 +29,14 @@ public class PedidoController extends BaseControllerImpl<Pedido, PedidoServiceIm
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(("{\"error\": \"" + e.getMessage() + "\"}"));
         }
     }
+    @PostMapping("/pedido")
+    public ResponseEntity<?> createCarrito(@RequestParam String filtro){
+        try{
+            return ResponseEntity.status(HttpStatus.OK).body(service.search(filtro));
+        } catch(Exception e){
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(("{\"error\": \"" + e.getMessage() + "\"}"));
+        }
+    }
 
 }
 
