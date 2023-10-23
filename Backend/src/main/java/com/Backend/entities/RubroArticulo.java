@@ -21,26 +21,14 @@ import java.util.List;
 public class RubroArticulo extends BaseFecha {
 
 
-    @ManyToOne()
-    @JoinColumn(name = "id_rubro_padre")
-    private RubroArticulo rubroPadre;
+    @OneToMany(mappedBy = "rubroArticulo")
+    private List<ArticuloInsumo> articuloInsumos;
 
-    @Nullable
-    @OneToMany(mappedBy = "rubroPadre")
-    private List<RubroArticulo> subRubros = new ArrayList<RubroArticulo>();
 
     @NotNull
     private String denominacion;
 
-
-    public void addSubRubro(RubroArticulo rubroArticulo){
-        subRubros.add(rubroArticulo);
+    public void addArticuloInsumos(ArticuloInsumo articuloInsumo) {
+        articuloInsumos.add(articuloInsumo);
     }
-    public RubroArticulo(String denominacion, RubroArticulo rubroPadre) {
-        this.denominacion = denominacion;
-        this.rubroPadre = rubroPadre;
-    }
-
-
-
 }

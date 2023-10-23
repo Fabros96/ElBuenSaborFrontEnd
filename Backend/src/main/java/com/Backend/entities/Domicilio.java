@@ -6,6 +6,7 @@ import lombok.*;
 import org.antlr.v4.runtime.misc.NotNull;
 
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "domicilio")
@@ -42,6 +43,14 @@ public class Domicilio extends BaseFecha {
     @ManyToOne()
     @JoinColumn(name = "id_cliente")
     private Cliente cliente;
+
+    @OneToMany(mappedBy="domicilio")
+    private List<Pedido> pedidos;
+
+    public void addPedido(Pedido pedido){
+        pedidos.add(pedido);
+    }
+
 
 
 }

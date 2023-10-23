@@ -30,10 +30,6 @@ public class DetallePedido extends Base {
     private BigDecimal subtotalCosto;
 
     @ManyToOne()
-    @JoinColumn(name = "id_articulo_insumo")
-    private ArticuloInsumo articuloInsumo;
-
-    @ManyToOne()
     @JoinColumn(name = "id_articulo_manufacturado")
     private ArticuloManufacturado articuloManufacturado;
 
@@ -41,6 +37,7 @@ public class DetallePedido extends Base {
     @ManyToOne()
     @JoinColumn(name = "id_pedido")
     private Pedido pedido;
+
 
 }
 

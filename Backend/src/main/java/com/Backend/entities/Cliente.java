@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "cliente")
@@ -27,5 +28,10 @@ public class Cliente extends BaseFecha {
     @JoinColumn(name = "id_usuario")
     private Usuario usuario;
 
+    @OneToMany(mappedBy="cliente")
+    private List<Domicilio> domicilios;
 
+    public void addDomicilio(Domicilio domicilio){
+        domicilios.add(domicilio);
+    }
 }

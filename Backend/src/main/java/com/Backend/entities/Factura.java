@@ -7,7 +7,9 @@ import lombok.*;
 import org.antlr.v4.runtime.misc.NotNull;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "factura")
@@ -43,11 +45,15 @@ public class Factura extends BaseFecha {
     @Column(name = "total_venta", precision = 10, scale = 2)
     private BigDecimal totalVenta;
 
-
-
     @NotNull
     @OneToOne
     @JoinColumn(name = "id_pedido")
     private Pedido pedido;
 
+    @OneToMany(mappedBy = "factura")
+    private List<DetalleFactura> detallesFactura = new ArrayList<>();
+
+    public void addDetallesFactura(DetalleFactura detalleFactura){
+        detallesFactura.add(detalleFactura);
+    }
 }

@@ -11,6 +11,7 @@ import org.antlr.v4.runtime.misc.NotNull;
 import java.math.BigDecimal;
 import java.time.LocalTime;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "pedido")
@@ -55,13 +56,23 @@ public class Pedido extends BaseFecha {
 
     @ManyToOne()
     @JoinColumn(name = "id_domicilio_entrega")
-    private Domicilio domicilioEntrega;
+    private Domicilio domicilio;
 
     @NotNull
     @ManyToOne()
     @JoinColumn(name = "id_cliente")
     private Cliente cliente;
 
+    @OneToOne
+    @JoinColumn(name = "id_factura")
+    private Factura factura;
+
+    @OneToMany(mappedBy = "pedido")
+    private List<DetallePedido> detallesPedido;
+
+    public void adddetallesPedido(DetallePedido detallePedido){
+        detallesPedido.add(detallePedido);
+    }
 
 
 }

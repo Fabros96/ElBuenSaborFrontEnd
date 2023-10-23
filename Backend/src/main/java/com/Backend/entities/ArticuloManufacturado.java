@@ -1,13 +1,16 @@
 package com.Backend.entities;
 
 import com.Backend.entities.Base;
+import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
 
 import lombok.*;
 import org.antlr.v4.runtime.misc.NotNull;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "articulo_manufacturado")
@@ -40,6 +43,13 @@ public class ArticuloManufacturado extends BaseFecha {
 
     @Column(length = 500, name = "url_imagen")
     private String urlImagen;
+
+    @OneToMany(mappedBy = "articuloManufacturado")
+    private List<DetalleArticuloManufacturado> detallesArticuloManufacturado = new ArrayList<>();
+
+    public void addDetalleArticuloManufacturado (DetalleArticuloManufacturado detalleArticuloManufacturado){
+        detallesArticuloManufacturado.add(detalleArticuloManufacturado);
+    }
 
 
 }

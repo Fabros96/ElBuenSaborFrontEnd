@@ -13,7 +13,6 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @Getter
 @Builder
-
 @Setter
 public class DetalleArticuloManufacturado extends Base {
 
@@ -28,7 +27,7 @@ public class DetalleArticuloManufacturado extends Base {
 
     @NotNull
     @ManyToOne()
-    @JoinColumn(name = "id_articulo_manufacturado")
+    @JoinColumn(name = "id_ArticuloManufacturado")
     private ArticuloManufacturado articuloManufacturado;
 
 }

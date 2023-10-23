@@ -98,7 +98,7 @@ public class BackendApplication {
 			pedido.setFechaAlta(new Date(1-10-2023));
 			pedido.setFechaBaja(null);
 			pedido.setFechaModificacion(null);
-			pedido.setDomicilioEntrega(domi);
+			pedido.setDomicilio(domi);
 			pedido.setEstado(PAGADO);
 			pedido.setFechaPedido(new Date(1-10-2023));
 			pedido.setFormaPago(EFECTIVO);
@@ -128,19 +128,19 @@ public class BackendApplication {
 			ra.setFechaBaja(null);
 			ra.setFechaModificacion(null);
 
-			RubroArticulo raPadre = new RubroArticulo();
-			RubroArticulo raHijo = new RubroArticulo();
-			RubroArticulo raHijo2 = new RubroArticulo();
-			raPadre.setDenominacion("algo");
-			raHijo.setDenominacion("algotmbn");
-			raHijo2.setDenominacion("algosii");
-			rubroArticuloRepository.save(raPadre);
-			rubroArticuloRepository.save(raHijo);
-			rubroArticuloRepository.save(raHijo2);
+//			RubroArticulo raPadre = new RubroArticulo();
+//			RubroArticulo raHijo = new RubroArticulo();
+//			RubroArticulo raHijo2 = new RubroArticulo();
+//			raPadre.setDenominacion("algo");
+//			raHijo.setDenominacion("algotmbn");
+//			raHijo2.setDenominacion("algosii");
+//			rubroArticuloRepository.save(raPadre);
+//			rubroArticuloRepository.save(raHijo);
+//			rubroArticuloRepository.save(raHijo2);
 
-			ra.setRubroPadre(raPadre);
-			ra.addSubRubro(raHijo);
-			ra.addSubRubro(raHijo2);
+//			ra.setRubroPadre(raPadre);
+//			ra.addSubRubro(raHijo);
+//			ra.addSubRubro(raHijo2);
 			rubroArticuloRepository.save(ra);
 
 			UnidadMedida unidad = new UnidadMedida();
@@ -161,6 +161,7 @@ public class BackendApplication {
 			artInsumo.setUrlImagen("urlURLurlURLurlURL");
 			articuloInsumoRepository.save(artInsumo);
 
+
 			ArticuloManufacturado artMan = new ArticuloManufacturado();
 			artMan.setCosto(BigDecimal.valueOf(1200));
 			artMan.setDenominacion("hamburguesa");
@@ -171,7 +172,17 @@ public class BackendApplication {
 			artMan.setPrecioVenta(BigDecimal.valueOf(2500));
 			artMan.setTiempoEstimadoCocina(20);
 			artMan.setUrlImagen("urlURLurlURLurlURL");
+//
+
 			articuloManufacturadoRepository.save(artMan);
+
+			DetalleArticuloManufacturado detalleArticuloManufacturado = new DetalleArticuloManufacturado();
+			detalleArticuloManufacturado.setCantidad(BigDecimal.valueOf(3));
+			detalleArticuloManufacturado.setArticuloInsumo(artInsumo);
+			detalleArticuloManufacturado.setArticuloManufacturado(artMan);
+			artMan.addDetalleArticuloManufacturado(detalleArticuloManufacturado);
+
+			detalleArticuloManufacturadoRepository.save(detalleArticuloManufacturado);
 
 			DetalleFactura df = new DetalleFactura();
 			df.setArticuloManufacturado(artMan);
