@@ -7,7 +7,7 @@ Intregrantes:
  - Fabrizio Azegio
  - Ignacio Arnold
  - Joaquin Cortez
- - Exequiel Buxó
+ - Ezequiel Buxó
    
 #Nombre de equipo : JAWA SCRIPT\
 
