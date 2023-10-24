@@ -1,5 +1,6 @@
 package com.Backend.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import lombok.*;
@@ -40,10 +41,12 @@ public class Domicilio extends BaseFecha {
     private Integer pisoDpto;
 
     @NotNull
+    @JsonIgnore
     @ManyToOne()
     @JoinColumn(name = "id_cliente")
     private Cliente cliente;
 
+    @JsonIgnore
     @OneToMany(mappedBy="domicilio")
     private List<Pedido> pedidos;
 

@@ -1,6 +1,7 @@
 package com.Backend.entities;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import lombok.*;
@@ -34,6 +35,7 @@ public class DetallePedido extends Base {
     private ArticuloManufacturado articuloManufacturado;
 
     @NotNull
+    @JsonIgnore
     @ManyToOne()
     @JoinColumn(name = "id_pedido")
     private Pedido pedido;

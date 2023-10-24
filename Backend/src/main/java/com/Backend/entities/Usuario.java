@@ -43,4 +43,14 @@ public class Usuario extends BaseFecha {
     @Column(name = "activo", nullable = false)
     private Boolean activo;
 
+    @OneToOne(mappedBy = "usuario", optional = false)
+    private Cliente cliente;
+
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
 }

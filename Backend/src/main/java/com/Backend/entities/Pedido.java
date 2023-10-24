@@ -1,5 +1,6 @@
 package com.Backend.entities;
 
+import com.Backend.DTO.DTOArticuloCarrito;
 import com.Backend.enums.EstadoPedido;
 import com.Backend.enums.FormaPago;
 import com.Backend.enums.TipoEnvio;
@@ -21,14 +22,14 @@ import java.util.List;
 @Setter
 @Builder
 
-public class Pedido extends BaseFecha {
+public class Pedido extends Base {
 
     @NotNull
     @Column(name = "fecha_pedido")
     @Temporal(TemporalType.TIMESTAMP)
     private Date fechaPedido;
 
-    @NotNull
+    //@NotNull  PONER ESTO CUANDO SE ARREGLE LO DE SUMAR EL TIEMPO ESTIMADO DE COCINA
     @Column(name = "hora_estimada_finalizacion")
     private LocalTime horaEstimadaFinalizacion;
 
@@ -74,5 +75,6 @@ public class Pedido extends BaseFecha {
         detallesPedido.add(detallePedido);
     }
 
+    public void setdetallesPedido(List<DetallePedido> detalles){this.detallesPedido = detalles;}
 
 }

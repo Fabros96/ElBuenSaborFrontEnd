@@ -1,6 +1,7 @@
 package com.Backend;
 
 
+import com.Backend.DTO.DTOArticuloCarrito;
 import com.Backend.entities.*;
 import com.Backend.repositories.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -95,9 +96,7 @@ public class BackendApplication {
 
 			Pedido pedido = new Pedido();
 			pedido.setCliente(cliente1);
-			pedido.setFechaAlta(new Date(1-10-2023));
-			pedido.setFechaBaja(null);
-			pedido.setFechaModificacion(null);
+
 			pedido.setDomicilio(domi);
 			pedido.setEstado(PAGADO);
 			pedido.setFechaPedido(new Date(1-10-2023));
@@ -128,19 +127,8 @@ public class BackendApplication {
 			ra.setFechaBaja(null);
 			ra.setFechaModificacion(null);
 
-//			RubroArticulo raPadre = new RubroArticulo();
-//			RubroArticulo raHijo = new RubroArticulo();
-//			RubroArticulo raHijo2 = new RubroArticulo();
-//			raPadre.setDenominacion("algo");
-//			raHijo.setDenominacion("algotmbn");
-//			raHijo2.setDenominacion("algosii");
-//			rubroArticuloRepository.save(raPadre);
-//			rubroArticuloRepository.save(raHijo);
-//			rubroArticuloRepository.save(raHijo2);
 
-//			ra.setRubroPadre(raPadre);
-//			ra.addSubRubro(raHijo);
-//			ra.addSubRubro(raHijo2);
+
 			rubroArticuloRepository.save(ra);
 
 			UnidadMedida unidad = new UnidadMedida();

@@ -15,7 +15,7 @@ public interface BaseController <E extends Base, ID extends Serializable>{
 
     public ResponseEntity<?> getAll(Pageable pageable);
     public ResponseEntity<?> getOne(@PathVariable ID id);
-    public ResponseEntity<?> save(@PathVariable E entity);
+    public ResponseEntity<?> save(@RequestBody E entity);
     public ResponseEntity<?> update(@PathVariable ID id, @RequestBody E entity);
     public ResponseEntity<?> delete(@PathVariable ID id);
 }
