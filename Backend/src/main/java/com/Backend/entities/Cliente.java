@@ -33,7 +33,6 @@ public class Cliente extends BaseFecha {
 
     @JsonIgnore
     @OneToMany(mappedBy="cliente")
-
     private List<Domicilio> domicilios = new ArrayList<>();
 
     public void addDomicilio(Domicilio domicilio){

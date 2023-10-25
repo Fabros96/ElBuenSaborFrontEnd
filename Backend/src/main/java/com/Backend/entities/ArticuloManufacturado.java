@@ -1,6 +1,7 @@
 package com.Backend.entities;
 
 import com.Backend.entities.Base;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
 
@@ -45,7 +46,12 @@ public class ArticuloManufacturado extends BaseFecha {
     private String urlImagen;
 
     @OneToMany(mappedBy = "articuloManufacturado")
+    @JsonIgnore
     private List<DetalleArticuloManufacturado> detallesArticuloManufacturado = new ArrayList<>();
+
+    @ManyToOne
+    @JoinColumn(name = "id_tipoArticulo")
+    private TipoArticulo tipoArticulo;
 
     public void addDetalleArticuloManufacturado (DetalleArticuloManufacturado detalleArticuloManufacturado){
         detallesArticuloManufacturado.add(detalleArticuloManufacturado);
