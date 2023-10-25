@@ -46,6 +46,8 @@ public class BackendApplication {
 	 UnidadMedidaRepository unidadMedidaRepository;
 	@Autowired
 	 UsuarioRepository usuarioRepository;
+	@Autowired
+	TipoArticuloRepository tipoArticuloRepository;
 
 
 	public static void main(String[] args) {
@@ -160,6 +162,11 @@ public class BackendApplication {
 			artMan.setPrecioVenta(BigDecimal.valueOf(2500));
 			artMan.setTiempoEstimadoCocina(20);
 			artMan.setUrlImagen("urlURLurlURLurlURL");
+
+			TipoArticulo tipoArticulo = new TipoArticulo();
+			tipoArticulo.setNombreCategoria("sandwiches");
+			tipoArticuloRepository.save(tipoArticulo);
+			artMan.setTipoArticulo(tipoArticulo);
 //
 
 			articuloManufacturadoRepository.save(artMan);

@@ -49,6 +49,7 @@ public class PedidoServiceImpl extends BaseServiceImpl<Pedido, Long> implements 
     }
 
     @Transactional
+    //FALTA VER STOCK CAPO
     public Pedido save(DTOCrearPedido dtoPedido) throws Exception {
         try {
             Calendar calendar = Calendar.getInstance();
