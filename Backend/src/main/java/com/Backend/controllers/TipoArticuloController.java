@@ -1,7 +1,9 @@
 package com.Backend.controllers;
 
 import com.Backend.entities.Cliente;
+import com.Backend.entities.TipoArticulo;
 import com.Backend.services.ClienteServiceImpl;
+import com.Backend.services.TipoArticuloServiceImpl;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -9,8 +11,8 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @CrossOrigin(origins = "*")
-@RequestMapping(path = "api/v1/clientes")
-public class ClienteController extends BaseControllerImpl<Cliente, ClienteServiceImpl>{
+@RequestMapping(path = "api/v1/tipoArticulos")
+public class TipoArticuloController extends BaseControllerImpl<TipoArticulo, TipoArticuloServiceImpl>{
 
     @GetMapping("/search")
     public ResponseEntity<?> search(@RequestParam String filtro){
@@ -29,4 +31,3 @@ public class ClienteController extends BaseControllerImpl<Cliente, ClienteServic
         }
     }
 }
-

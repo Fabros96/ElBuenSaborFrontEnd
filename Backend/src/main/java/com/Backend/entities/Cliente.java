@@ -1,5 +1,6 @@
 package com.Backend.entities;
 
+import com.Backend.enums.Rol;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
@@ -26,6 +27,8 @@ public class Cliente extends BaseFecha {
 
     private String email;
 
+    public Rol rol;
+
     @OneToOne
     @JsonIgnore
     @JoinColumn(name = "id_usuario")
@@ -33,7 +36,6 @@ public class Cliente extends BaseFecha {
 
     @JsonIgnore
     @OneToMany(mappedBy="cliente")
-
     private List<Domicilio> domicilios = new ArrayList<>();
 
     public void addDomicilio(Domicilio domicilio){
