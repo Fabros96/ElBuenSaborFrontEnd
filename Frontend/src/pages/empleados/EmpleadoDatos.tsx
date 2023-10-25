@@ -2,7 +2,7 @@ import React from 'react'
 import './EmpleadoDatos.css'
 import { useForm } from 'react-hook-form'
 
-function EmpleadoDatos() {
+export const EmpleadoDatos = () => {
    const { register } = useForm()
    return (
       <>
@@ -59,5 +59,3 @@ function EmpleadoDatos() {
       </>
    )
 }
-
-export default EmpleadoDatos
