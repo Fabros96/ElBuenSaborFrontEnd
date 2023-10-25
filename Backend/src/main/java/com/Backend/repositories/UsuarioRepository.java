@@ -2,7 +2,6 @@ package com.Backend.repositories;
 
 import com.Backend.entities.Usuario;
 import com.Backend.enums.Rol;
-import org.hibernate.mapping.List;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.Query;
@@ -10,6 +9,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.Date;
+import java.util.List;
 
 
 @Repository
@@ -25,7 +25,7 @@ public interface UsuarioRepository extends BaseRepository<Usuario, Long> {
             value = "SELECT * FROM usuario WHERE usuario.username = :filtro AND usuario.activo = :activo",
             nativeQuery = true
     )
-    Usuario searchNativo(@Param("filtro") String filtro);
+    List<Usuario> searchNativo(@Param("filtro") String filtro);
 
     //ALTA USUARIO
     @Query(value = "INSERT INTO Usuario (ACTIVO, FECHA_ALTA, PASSWORD, ROL, USERNAME) VALUES (:Activo, :FAlta, :Password, :Rol, :Username)")
