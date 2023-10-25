@@ -1,5 +1,6 @@
 package com.Backend.entities;
 
+import com.Backend.enums.Rol;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
@@ -25,6 +26,8 @@ public class Cliente extends BaseFecha {
     private String telefono;
 
     private String email;
+
+    public Rol rol;
 
     @OneToOne
     @JsonIgnore
