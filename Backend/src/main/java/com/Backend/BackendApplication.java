@@ -1,8 +1,8 @@
 package com.Backend;
 
 
-import com.Backend.DTO.DTOArticuloCarrito;
 import com.Backend.entities.*;
+import com.Backend.enums.Rol;
 import com.Backend.repositories.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -11,7 +11,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.Date;
 
@@ -179,6 +178,37 @@ public class BackendApplication {
 			df.setSubtotal(BigDecimal.valueOf(5000));
 			detalleFacturaRepository.save(df);
 
+
+			Cliente cliente2 = new Cliente();
+			cliente2.setNombre("Loco");
+			cliente2.setApellido("Lope");
+			cliente2.setEmail("correo@correo.com");
+			cliente2.setFechaAlta(new Date(1-10-2023));
+			cliente2.setFechaBaja(null);
+			cliente2.setFechaModificacion(null);
+			cliente2.setTelefono("12345678");
+
+			Usuario user2 = new Usuario();
+			user2.setFechaAlta(new Date(1-10-2023));
+			user2.setFechaBaja(null);
+			user2.setFechaModificacion(null);
+			user2.setUsername(cliente2.getEmail());
+			user2.setPassword("123passw");
+			user2.setActivo(true);
+			user2.setRol(Rol.CLIENTE);
+			usuarioRepository.save(user2);
+
+			cliente2.setUsuario(user2);
+			clienteRepository.save(cliente2);
+
+			Domicilio domi2 = new Domicilio();
+			domi2.setCalle("Falsa 123");
+			domi2.setCodigoPostal(5539);
+			domi2.setFechaAlta(new Date(1-10-2023));
+			domi2.setFechaBaja(null);
+			domi2.setFechaModificacion(null);
+			domi2.setCliente(cliente2);
+			domicilioRepository.save(domi2);
 
 //			DetallePedido detped = new DetallePedido();
 //			detped.setCantidad(1);
