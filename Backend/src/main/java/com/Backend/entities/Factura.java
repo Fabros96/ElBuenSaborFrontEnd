@@ -1,6 +1,7 @@
 package com.Backend.entities;
 
 import com.Backend.enums.FormaPago;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import lombok.*;
@@ -18,25 +19,12 @@ import java.util.List;
 @Getter
 @Setter
 @Builder
-
 public class Factura extends BaseFecha {
 
     @NotNull
     @Column(name = "fecha_facturacion")
     @Temporal(TemporalType.TIMESTAMP)
     private Date fechaFacturacion;
-
-    @Column(name = "mp_payment_id")
-    private Long mpPaymentId;
-
-    @Column(name = "mp_merchant_order_id")
-    private Long mpMerchantOrderId;
-
-    @Column(name = "mp_preference_id")
-    private String mpPreferenceId;
-
-    @Column(name = "mp_payment_type")
-    private String mpPaymentType;
 
     @NotNull
     private FormaPago formaPago;
@@ -47,10 +35,11 @@ public class Factura extends BaseFecha {
 
     @NotNull
     @OneToOne
-    @JoinColumn(name = "id_pedido")
+    @JoinColumn(name = "id_pedido", referencedColumnName = "id")
     private Pedido pedido;
 
     @OneToMany(mappedBy = "factura")
+    @JsonIgnore
     private List<DetalleFactura> detallesFactura = new ArrayList<>();
 
     public void addDetallesFactura(DetalleFactura detalleFactura){

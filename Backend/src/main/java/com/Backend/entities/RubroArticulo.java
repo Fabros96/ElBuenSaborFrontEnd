@@ -1,5 +1,6 @@
 package com.Backend.entities;
 
+import com.Backend.enums.EstadoRubro;
 import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
 
@@ -28,6 +29,7 @@ public class RubroArticulo extends BaseFecha {
     @NotNull
     private String denominacion;
 
+   private EstadoRubro estadoRubro;
     public void addArticuloInsumos(ArticuloInsumo articuloInsumo) {
         articuloInsumos.add(articuloInsumo);
     }

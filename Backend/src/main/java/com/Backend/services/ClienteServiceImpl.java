@@ -4,10 +4,8 @@ import com.Backend.DTO.DTOmostrarPedidos;
 import com.Backend.entities.Cliente;
 import com.Backend.entities.Pedido;
 import com.Backend.enums.EstadoPedido;
-import com.Backend.enums.Rol;
 import com.Backend.repositories.BaseRepository;
 import com.Backend.repositories.ClienteRepository;
-
 import com.Backend.repositories.PedidoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;

@@ -1,7 +1,6 @@
 package com.Backend;
 
 
-import com.Backend.DTO.DTOArticuloCarrito;
 import com.Backend.entities.*;
 import com.Backend.repositories.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +10,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.Date;
 
@@ -116,11 +114,7 @@ public class BackendApplication {
 			factura.setFechaBaja(null);
 			factura.setFechaModificacion(null);
 			factura.setFechaFacturacion(new Date(1-10-2023));
-			factura.setMpMerchantOrderId(1234567L);
-			factura.setMpPaymentType("Tarjeta?");
-			factura.setMpPaymentId(123L);
 			factura.setTotalVenta(BigDecimal.valueOf(5000));
-			factura.setMpPreferenceId("que es esto");
 			facturaRepository.save(factura);
 
 			RubroArticulo ra = new RubroArticulo();

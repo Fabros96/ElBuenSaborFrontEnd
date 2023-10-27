@@ -17,11 +17,11 @@ public interface FacturaRepository extends BaseRepository<Factura, Long> {
 
 
     //Anotacion JPQL parametros indexados
-    @Query(value = "SELECT f FROM Factura f WHERE f.formaPago LIKE %:filtro%" )
-    List<Factura> search(@Param("filtro") FormaPago filtro);
-//
-    @Query(value = "SELECT f FROM Factura f WHERE f.formaPago LIKE %:filtro%" )
-    Page<Factura> search(@Param("filtro") FormaPago filtro, Pageable pageable);
+//    @Query(value = "SELECT f FROM Factura f WHERE f.formaPago LIKE %:filtro%" )
+//    List<Factura> search(@Param("filtro") FormaPago filtro);
+////
+//    @Query(value = "SELECT f FROM Factura f WHERE f.formaPago LIKE %:filtro%" )
+//    Page<Factura> search(@Param("filtro") FormaPago filtro, Pageable pageable);
 //    //QUERy nativo
 //    @Query(
 //            value = "SELECT * FROM cliente WHERE cliente.nombre LIKE %:filtro% OR cliente.apellido LIKE %:filtro% ",

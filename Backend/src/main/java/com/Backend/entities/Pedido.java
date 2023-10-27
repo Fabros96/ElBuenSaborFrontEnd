@@ -1,9 +1,9 @@
 package com.Backend.entities;
 
-import com.Backend.DTO.DTOArticuloCarrito;
 import com.Backend.enums.EstadoPedido;
 import com.Backend.enums.FormaPago;
 import com.Backend.enums.TipoEnvio;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import lombok.*;
@@ -56,16 +56,18 @@ public class Pedido extends Base {
     private FormaPago formaPago;
 
     @ManyToOne()
+    @JsonIgnore
     @JoinColumn(name = "id_domicilio_entrega")
     private Domicilio domicilio;
 
     @NotNull
     @ManyToOne()
+    @JsonIgnore
     @JoinColumn(name = "id_cliente")
     private Cliente cliente;
 
-    @OneToOne
-    @JoinColumn(name = "id_factura")
+    @OneToOne(mappedBy = "pedido", cascade = CascadeType.ALL)
+    @JsonIgnore
     private Factura factura;
 
     @OneToMany(mappedBy = "pedido")
