@@ -6,6 +6,7 @@ import com.Backend.repositories.BaseRepository;
 import com.Backend.repositories.FacturaRepository;
 import com.Backend.repositories.PedidoRepository;
 import jakarta.transaction.Transactional;
+//import jdk.jshell.spi.ExecutionControl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -67,7 +68,10 @@ public class FacturaServiceImpl extends BaseServiceImpl<Factura, Long> implement
 
 //            pedidoRepository.save(pedido);
 //            System.out.println("despues");
-        return facturaRepository.save(factura);
+            factura = facturaRepository.save(factura);
+            facturaRepository.flush();
+//            refresh(factura);
+        return factura;
         } catch (Exception e) {
             throw new Exception(e.getMessage());
         }

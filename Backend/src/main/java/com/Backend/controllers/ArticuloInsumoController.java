@@ -1,5 +1,6 @@
 package com.Backend.controllers;
 
+import com.Backend.DTO.DTOCompraInsumo;
 import com.Backend.entities.ArticuloInsumo;
 import com.Backend.services.ArticuloInsumoServiceImpl;
 import org.springframework.data.domain.Pageable;
@@ -23,6 +24,24 @@ public class ArticuloInsumoController extends BaseControllerImpl<ArticuloInsumo,
     public ResponseEntity<?> search(@RequestParam String filtro, Pageable pageable){
         try{
             return ResponseEntity.status(HttpStatus.OK).body(service.search(filtro, pageable));
+        } catch(Exception e){
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(("{\"error\": \"" + e.getMessage() + "\"}"));
+        }
+    }
+
+    @GetMapping("/verStock")
+    public ResponseEntity<?> verStock(Pageable pageable){
+        try{
+            return ResponseEntity.status(HttpStatus.OK).body(service.verStock(pageable));
+        } catch(Exception e){
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(("{\"error\": \"" + e.getMessage() + "\"}"));
+        }
+    }
+
+    @PatchMapping("/ingresoStock")
+    public ResponseEntity<?> ingresoStock(@RequestBody DTOCompraInsumo dtoCompraInsumo){
+        try{
+            return ResponseEntity.status(HttpStatus.OK).body(service.ingresoStock(dtoCompraInsumo));
         } catch(Exception e){
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(("{\"error\": \"" + e.getMessage() + "\"}"));
         }

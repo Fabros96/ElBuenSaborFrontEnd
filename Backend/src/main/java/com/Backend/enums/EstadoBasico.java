@@ -1,6 +1,6 @@
 package com.Backend.enums;
 
-public enum EstadoRubro {
+public enum EstadoBasico {
     ALTA,
     BAJA
 }

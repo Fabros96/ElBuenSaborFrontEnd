@@ -2,6 +2,7 @@ package com.Backend.services;
 
 import com.Backend.entities.ArticuloManufacturado;
 import com.Backend.entities.TipoArticulo;
+import com.Backend.enums.EstadoBasico;
 import com.Backend.repositories.ArticuloInsumoRepository;
 import com.Backend.repositories.ArticuloManufacturadoRepository;
 import com.Backend.repositories.BaseRepository;
@@ -60,7 +61,6 @@ public class ArticuloManufacturadoServiceImpl extends BaseServiceImpl<ArticuloMa
 
     @Override
     public List<ArticuloManufacturado> searchByTipo(String filtro) throws Exception {
-        System.out.println("searchByTipo\n\n\n");
         try{
             TipoArticulo tipoArticulo = tipoArticuloRepository.searchTipo(filtro);
             List<ArticuloManufacturado> articulos = new ArrayList<>();
@@ -76,4 +76,18 @@ public class ArticuloManufacturadoServiceImpl extends BaseServiceImpl<ArticuloMa
             throw new Exception(e.getMessage());
         }
     }
+
+    public ArticuloManufacturado cambiarEstado(Long artId, EstadoBasico estado) throws Exception{
+        try{
+            ArticuloManufacturado articuloManufacturado = articuloManufacturadoRepository.getById(artId);
+            articuloManufacturado.setEstado(estado);
+            articuloManufacturadoRepository.save(articuloManufacturado);
+            return articuloManufacturado;
+        }catch (Exception e) {
+            throw new Exception(e.getMessage());
+        }
+    }
+
+
+
 }

@@ -14,9 +14,7 @@ import java.util.List;
 @NoArgsConstructor
 public class DTOCrearPedido {
 
-//    @OneToMany(mappedBy = "dtoCrearPedido")
     private List<DTODetallePedido> articulos = new ArrayList<>();
-    //estado,total,totalCosto,fechaPedido,horaEstimadaFinalizacion
     private TipoEnvio tipoEnvio;
     private FormaPago formaPago;
     private String domicilioCalle;

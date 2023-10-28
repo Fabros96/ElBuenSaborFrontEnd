@@ -58,9 +58,8 @@ public class PedidoServiceImpl extends BaseServiceImpl<Pedido, Long> implements 
             //Buscar cliente
             Usuario usuario = usuarioRepository.search(dtoPedido.getUsername());
             pedido.setCliente(usuario.getCliente());
-            if(usuario.getRol() != Rol.CLIENTE) {
+            if(usuario.getRol() == Rol.CLIENTE) {
                 List<DTODetallePedido> articulos = dtoPedido.getArticulos();
-                //aca meter el resto de atributos que necesita pedido
                 pedido.setFechaPedido(new Date());
                 //convertir articulos de DTOArticuloCarrito en DetallePedido
                 List<DetallePedido> detallesPedidos = new ArrayList<>();

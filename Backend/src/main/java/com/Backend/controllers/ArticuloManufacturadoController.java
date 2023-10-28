@@ -1,8 +1,7 @@
 package com.Backend.controllers;
 
-import com.Backend.entities.ArticuloInsumo;
 import com.Backend.entities.ArticuloManufacturado;
-import com.Backend.services.ArticuloInsumoServiceImpl;
+import com.Backend.enums.EstadoBasico;
 import com.Backend.services.ArticuloManufacturadoServiceImpl;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
@@ -39,4 +38,13 @@ public class ArticuloManufacturadoController extends BaseControllerImpl<Articulo
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(("{\"error\": \"" + e.getMessage() + "\"}"));
         }
     }
+    @PutMapping("/cambiarEstado")
+    public ResponseEntity<?> cambiarEstado(@RequestParam Long artId, EstadoBasico estadoRubro){
+        try{
+            return ResponseEntity.status(HttpStatus.OK).body(service.cambiarEstado(artId, estadoRubro));
+        } catch(Exception e){
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(("{\"error\": \"" + e.getMessage() + "\"}"));
+        }
+    }
+
 }

@@ -1,9 +1,8 @@
 package com.Backend.controllers;
 
 
-import com.Backend.entities.Domicilio;
 import com.Backend.entities.RubroArticulo;
-import com.Backend.services.DomicilioServiceImpl;
+import com.Backend.enums.EstadoBasico;
 import com.Backend.services.RubroArticuloServiceImpl;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
@@ -31,5 +30,14 @@ public class RubroArticuloController extends BaseControllerImpl<RubroArticulo, R
         }
     }
 
+    @PutMapping("/cambiarEstado")
+    //me da el error del servlet no se q, pero funciona, cambia el estado 10puntos :)
+    public ResponseEntity<?> cambiarEstado(@RequestParam Long rubroId, EstadoBasico estadoRubro){
+        try{
+            return ResponseEntity.status(HttpStatus.OK).body(service.cambiarEstado(rubroId, estadoRubro));
+        } catch(Exception e){
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(("{\"error\": \"" + e.getMessage() + "\"}"));
+        }
+    }
 }
 

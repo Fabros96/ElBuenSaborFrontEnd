@@ -1,6 +1,7 @@
 package com.Backend.services;
 
 import com.Backend.entities.RubroArticulo;
+import com.Backend.enums.EstadoBasico;
 import com.Backend.repositories.BaseRepository;
 import com.Backend.repositories.RubroArticuloRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,5 +29,16 @@ public class RubroArticuloServiceImpl extends BaseServiceImpl<RubroArticulo, Lon
     @Override
     public Page<RubroArticulo> search(String string, Pageable pageable) throws Exception {
         return null;
+    }
+
+    public RubroArticulo cambiarEstado(Long rubroId, EstadoBasico estadoRubro) throws Exception{
+        try{
+            RubroArticulo rubroArticulo = rubroArticuloRepository.getById(rubroId);
+            rubroArticulo.setEstadoRubro(estadoRubro);
+            rubroArticuloRepository.save(rubroArticulo);
+            return rubroArticulo;
+        }catch (Exception e) {
+            throw new Exception(e.getMessage());
+        }
     }
 }

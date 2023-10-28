@@ -1,6 +1,7 @@
 package com.Backend.entities;
 
 import com.Backend.entities.Base;
+import com.Backend.enums.EstadoBasico;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
@@ -53,6 +54,7 @@ public class ArticuloManufacturado extends BaseFecha {
     @JoinColumn(name = "id_tipoArticulo")
     private TipoArticulo tipoArticulo;
 
+    private EstadoBasico estado;
     public void addDetalleArticuloManufacturado (DetalleArticuloManufacturado detalleArticuloManufacturado){
         detallesArticuloManufacturado.add(detalleArticuloManufacturado);
     }

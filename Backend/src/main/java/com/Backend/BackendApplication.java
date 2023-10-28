@@ -145,6 +145,32 @@ public class BackendApplication {
 			artInsumo.setUrlImagen("urlURLurlURLurlURL");
 			articuloInsumoRepository.save(artInsumo);
 
+			ArticuloInsumo artInsumo2 = new ArticuloInsumo();
+			artInsumo2.setDenominacion("panHamburguesa");
+			artInsumo2.setFechaAlta(new Date(1-10-2023));
+			artInsumo2.setFechaBaja(null);
+			artInsumo2.setFechaModificacion(null);
+			artInsumo2.setPrecioCompra(BigDecimal.valueOf(1200));
+			artInsumo2.setRubroArticulo(ra);
+			artInsumo2.setStockActual(BigDecimal.valueOf(1));
+			artInsumo2.setStockMinimo(BigDecimal.valueOf(20));
+			artInsumo2.setUnidadMedida(unidad);
+			artInsumo2.setUrlImagen("urlURLurlURLurlURL");
+			articuloInsumoRepository.save(artInsumo2);
+
+			ArticuloInsumo artInsumo3 = new ArticuloInsumo();
+			artInsumo3.setDenominacion("tomate");
+			artInsumo3.setFechaAlta(new Date(1-10-2023));
+			artInsumo3.setFechaBaja(null);
+			artInsumo3.setFechaModificacion(null);
+			artInsumo3.setPrecioCompra(BigDecimal.valueOf(1200));
+			artInsumo3.setRubroArticulo(ra);
+			artInsumo3.setStockActual(BigDecimal.valueOf(5));
+			artInsumo3.setStockMinimo(BigDecimal.valueOf(20));
+			artInsumo3.setUnidadMedida(unidad);
+			artInsumo3.setUrlImagen("urlURLurlURLurlURL");
+			articuloInsumoRepository.save(artInsumo3);
+
 
 			ArticuloManufacturado artMan = new ArticuloManufacturado();
 			artMan.setCosto(BigDecimal.valueOf(1200));

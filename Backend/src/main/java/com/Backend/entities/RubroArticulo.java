@@ -1,14 +1,12 @@
 package com.Backend.entities;
 
-import com.Backend.enums.EstadoRubro;
-import jakarta.annotation.Nullable;
+import com.Backend.enums.EstadoBasico;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import lombok.*;
 import org.antlr.v4.runtime.misc.NotNull;
 
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -23,13 +21,14 @@ public class RubroArticulo extends BaseFecha {
 
 
     @OneToMany(mappedBy = "rubroArticulo")
+    @JsonIgnore
     private List<ArticuloInsumo> articuloInsumos;
 
 
     @NotNull
     private String denominacion;
 
-   private EstadoRubro estadoRubro;
+   private EstadoBasico estadoRubro;
     public void addArticuloInsumos(ArticuloInsumo articuloInsumo) {
         articuloInsumos.add(articuloInsumo);
     }
