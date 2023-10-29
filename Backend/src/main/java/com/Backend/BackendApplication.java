@@ -63,6 +63,34 @@ public class BackendApplication {
 //			Cliente cliente = Cliente.builder().nombre("hola").apellido("Gutierrez").email("soyGutierrez@gmail.com").telefono("2604552255").build();
 //			cliente.setFechaAlta(new Date(1-10-2023));
 
+			ArticuloManufacturado artMan = new ArticuloManufacturado();
+			artMan.setCosto(BigDecimal.valueOf(1200));
+			artMan.setDenominacion("hamburguesa");
+			artMan.setDescripcion("hamburguesa rica con panceta siuu");
+			artMan.setFechaAlta(new Date(1-10-2023));
+			artMan.setFechaBaja(null);
+			artMan.setFechaModificacion(null);
+			artMan.setPrecioVenta(BigDecimal.valueOf(2500));
+			artMan.setTiempoEstimadoCocina(20);
+			artMan.setUrlImagen("urlURLurlURLurlURL");
+
+			TipoArticulo tipoArticulo = new TipoArticulo();
+			tipoArticulo.setNombreCategoria("sandwiches");
+			tipoArticuloRepository.save(tipoArticulo);
+			artMan.setTipoArticulo(tipoArticulo);
+
+			ArticuloManufacturado artMan2 = new ArticuloManufacturado();
+			artMan2.setCosto(BigDecimal.valueOf(1200));
+			artMan2.setDenominacion("pizza");
+			artMan2.setDescripcion("napolitana");
+			artMan2.setFechaAlta(new Date(1-10-2023));
+			artMan2.setFechaBaja(null);
+			artMan2.setFechaModificacion(null);
+			artMan2.setPrecioVenta(BigDecimal.valueOf(2500));
+			artMan2.setTiempoEstimadoCocina(20);
+			artMan2.setUrlImagen("urlURLurlURLurlURL");
+			articuloManufacturadoRepository.save(artMan2);
+
 			Cliente cliente1 = new Cliente();
 			cliente1.setNombre("Hola :)");
 			cliente1.setApellido("Gonzalez");
@@ -97,6 +125,7 @@ public class BackendApplication {
 			Pedido pedido = new Pedido();
 			pedido.setCliente(cliente1);
 
+
 			pedido.setDomicilio(domi);
 			pedido.setEstado(PAGADO);
 			pedido.setFechaPedido(new Date(1-10-2023));
@@ -106,6 +135,25 @@ public class BackendApplication {
 			pedido.setTotal(BigDecimal.valueOf(2500));
 			pedido.setTotalCosto(BigDecimal.valueOf(1200));
 			pedidoRepository.save(pedido);
+
+
+			Pedido pedido1 = new Pedido();
+			pedido.setCliente(cliente1);
+
+			pedido1.setDomicilio(domi);
+			pedido1.setEstado(PAGADO);
+			pedido1.setFechaPedido(new Date(1-10-2023));
+			pedido1.setFormaPago(EFECTIVO);
+			pedido1.setHoraEstimadaFinalizacion(LocalTime.now());//ver
+			pedido1.setTipoEnvio(DELIVERY);
+			pedido1.setTotal(BigDecimal.valueOf(2500));
+			pedido1.setTotalCosto(BigDecimal.valueOf(1200));
+			pedidoRepository.save(pedido1);
+
+//			DetallePedido detallePedido = new DetallePedido();
+//			detallePedido.setArticuloManufacturado(artMan);
+//			detallePedido.setPedido(pedido);
+
 
 			Factura factura = new Factura();
 			factura.setFormaPago(EFECTIVO);
@@ -172,21 +220,7 @@ public class BackendApplication {
 			articuloInsumoRepository.save(artInsumo3);
 
 
-			ArticuloManufacturado artMan = new ArticuloManufacturado();
-			artMan.setCosto(BigDecimal.valueOf(1200));
-			artMan.setDenominacion("hamburguesa");
-			artMan.setDescripcion("hamburguesa rica con panceta siuu");
-			artMan.setFechaAlta(new Date(1-10-2023));
-			artMan.setFechaBaja(null);
-			artMan.setFechaModificacion(null);
-			artMan.setPrecioVenta(BigDecimal.valueOf(2500));
-			artMan.setTiempoEstimadoCocina(20);
-			artMan.setUrlImagen("urlURLurlURLurlURL");
 
-			TipoArticulo tipoArticulo = new TipoArticulo();
-			tipoArticulo.setNombreCategoria("sandwiches");
-			tipoArticuloRepository.save(tipoArticulo);
-			artMan.setTipoArticulo(tipoArticulo);
 //
 
 			articuloManufacturadoRepository.save(artMan);

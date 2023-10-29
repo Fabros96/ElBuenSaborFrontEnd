@@ -70,7 +70,7 @@ public class Pedido extends Base {
     @JsonIgnore
     private Factura factura;
 
-    @OneToMany(mappedBy = "pedido")
+    @OneToMany(mappedBy = "pedido", cascade = CascadeType.ALL)
     private List<DetallePedido> detallesPedido;
 
     public void adddetallesPedido(DetallePedido detallePedido){

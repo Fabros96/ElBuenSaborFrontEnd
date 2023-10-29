@@ -38,6 +38,11 @@ public class Cliente extends BaseFecha {
     @OneToMany(mappedBy="cliente")
     private List<Domicilio> domicilios = new ArrayList<>();
 
+    //AGREGAR AL DIAGRAMA
+    @OneToMany(mappedBy="cliente")
+    private List<Pedido> pedidos = new ArrayList<>();
+
+    public void addPedido(Pedido pedido){pedidos.add(pedido);}
     public void addDomicilio(Domicilio domicilio){
         domicilios.add(domicilio);
     }

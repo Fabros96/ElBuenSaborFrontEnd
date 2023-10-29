@@ -11,6 +11,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Date;
+
 @RestController
 @CrossOrigin(origins = "*")
 @RequestMapping(path = "api/v1/pedidos")
@@ -48,6 +50,16 @@ public class PedidoController extends BaseControllerImpl<Pedido, PedidoServiceIm
     public ResponseEntity<?> createCarrito(@RequestBody DTOCrearPedido dtoPedido){
         try{
             return ResponseEntity.status(HttpStatus.OK).body(service.savePedido(dtoPedido));
+        } catch(Exception e){
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(("{\"error\": \"" + e.getMessage() + "\"}"));
+        }
+    }
+
+    @GetMapping("/rankingProductos")
+    public ResponseEntity<?> rankingProductos(@RequestParam String date1, String date2){
+        try{
+            System.out.println("adentro del controller");
+            return ResponseEntity.status(HttpStatus.OK).body(service.rankingProductos(date1, date2));
         } catch(Exception e){
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(("{\"error\": \"" + e.getMessage() + "\"}"));
         }

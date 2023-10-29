@@ -36,7 +36,7 @@ public class DetallePedido extends Base {
 
     @NotNull
     @JsonIgnore
-    @ManyToOne()
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "id_pedido")
     private Pedido pedido;
 

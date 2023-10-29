@@ -1,5 +1,6 @@
 package com.Backend.services;
 
+import com.Backend.DTO.DTORankingClientes;
 import com.Backend.DTO.DTOmostrarPedidos;
 import com.Backend.entities.Cliente;
 import com.Backend.entities.Pedido;
@@ -13,11 +14,13 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 
 
 @Service
-public class ClienteServiceImpl extends BaseServiceImpl<Cliente, Long> implements ClienteService{
+public class ClienteServiceImpl extends BaseServiceImpl<Cliente, Long> implements ClienteService {
 
     @Autowired
     private ClienteRepository clienteRepository;
@@ -63,6 +66,33 @@ public class ClienteServiceImpl extends BaseServiceImpl<Cliente, Long> implement
                }
            }
          return pedidosMostrar;
+        } catch (Exception e) {
+            throw new Exception(e.getMessage());
+        }
+    }
+
+    public List<DTORankingClientes> rankingClientes(String date1, String date2) throws Exception {
+        try{
+            //paso filtro fechas y idCliente
+            List<Cliente> clientes = clienteRepository.findAll();
+            List<DTORankingClientes> dto = new ArrayList<>();
+            System.out.println(dto.size()+" amDto");
+//            for (int i = 0; i < clientes.size() ; i++) {
+//                dto.add(i, null);
+//            }
+            for (int i = 0; i < clientes.size(); i++) {
+                DTORankingClientes dtoRankingClientes = new DTORankingClientes();
+                long id = clientes.get(i).getId();
+                dtoRankingClientes.setClienteId(id);
+                dtoRankingClientes.setNombre(clientes.get(i).getNombre());
+                dtoRankingClientes.setApellido(clientes.get(i).getApellido());
+                //seteo cantidad de pedidos con la query
+                dtoRankingClientes.setCantidadPedidos(clienteRepository.searchClienteRanking(id, date1, date2));
+                dto.add(dtoRankingClientes);
+            }
+            dto.sort(Comparator.comparingInt(DTORankingClientes::getCantidadPedidos));
+
+            return dto;
         } catch (Exception e) {
             throw new Exception(e.getMessage());
         }
