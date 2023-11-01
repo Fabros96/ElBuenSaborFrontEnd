@@ -14,13 +14,13 @@ import java.util.List;
 
 @Repository
 public interface PedidoRepository extends BaseRepository<Pedido, Long> {
-    @Query(
+    /*@Query(
             value = "SELECT p FROM Pedido p WHERE p.id_cliente = cast(:filtro as int)",
             countQuery = "SELECT count(*) FROM cliente",
             nativeQuery = true
     )
     Page<Pedido> searchByCliente(@Param("filtro") Long clienteId, Pageable pageable);
-
+*/
     @Query(
             value = "SELECT * FROM Pedido p WHERE p.id_cliente = %:filtro%",
 //            countQuery = "SELECT count(*) FROM cliente",
@@ -40,4 +40,11 @@ public interface PedidoRepository extends BaseRepository<Pedido, Long> {
             nativeQuery = true
     )
     List<Pedido> searchPedidosBetweenDates(String date1, String date2);
+    @Query(
+            value = "SELECT * FROM Pedido p WHERE p.estado != 'COMPLETADO' AND p.estado != 'CANCELADO'",
+            nativeQuery=true
+    )
+    List<Pedido>searchPedidosActivos();
+
+
 }

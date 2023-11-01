@@ -35,8 +35,6 @@ public class PedidoServiceImpl extends BaseServiceImpl<Pedido, Long> implements 
     private DomicilioRepository domicilioRepository;
     @Autowired
     private UsuarioRepository usuarioRepository;
-    @Autowired
-    private DetallePedidoRepository detallePedidoRepository;
 
     public PedidoServiceImpl(BaseRepository<Pedido, Long> baseRepository) {
         super(baseRepository);
@@ -62,11 +60,9 @@ public class PedidoServiceImpl extends BaseServiceImpl<Pedido, Long> implements 
             //Buscar cliente
             Usuario usuario = usuarioRepository.search(dtoPedido.getUsername());
             pedido.setCliente(usuario.getCliente());
-            Cliente cliente = usuario.getCliente();
-            System.out.println("aca");
-//            if(usuario.getRol() == Rol.CLIENTE) {
+            if(usuario.getRol() != Rol.CLIENTE) {
                 List<DTODetallePedido> articulos = dtoPedido.getArticulos();
-
+                //aca meter el resto de atributos que necesita pedido
                 pedido.setFechaPedido(new Date());
                 //convertir articulos de DTOArticuloCarrito en DetallePedido
                 List<DetallePedido> detallesPedidos = new ArrayList<>();
@@ -77,11 +73,7 @@ public class PedidoServiceImpl extends BaseServiceImpl<Pedido, Long> implements 
                     ArticuloManufacturado articulo = articuloManufacturadoRepository.getById(dto.getId_ArticuloManufacturado());
                     detallePedido.setCantidad(dto.getCantidad());
                     detallePedido.setSubtotal(articulo.getPrecioVenta().multiply(BigDecimal.valueOf(dto.getCantidad())));
-                    detallePedido.setPedido(pedido);
-                    detallePedido.setArticuloManufacturado(articulo);
-//                    detallePedidoRepository.save(detallePedido);
                     detallesPedidos.add(detallePedido);
-                    detallePedidoRepository.save(detallePedido);
                     //aprovecho a calcular el tiempo aprox de entrega
                     tiempoEstimado = 0;
                     if (articulo.getTiempoEstimadoCocina() >= tiempoEstimado) {
@@ -111,11 +103,8 @@ public class PedidoServiceImpl extends BaseServiceImpl<Pedido, Long> implements 
                 pedido.setEstado(PENDIENTE_PAGO);
                 //Busco tiempo estimado
                 //            pedido.setHoraEstimadaFinalizacion(calendar.add(Calendar.HOUR_OF_DAY,tiempoEstimado));
-                cliente.addPedido(pedido);
-                clienteRepository.save(cliente);
 
-//            }
-
+            }
             return pedidoRepository.save(pedido);
         } catch (Exception e) {
             throw new Exception(e.getMessage());
@@ -152,7 +141,6 @@ public class PedidoServiceImpl extends BaseServiceImpl<Pedido, Long> implements 
             throw new Exception(e.getMessage());
         }
     }
-
     public DTORankingProductos rankingProductos(String date1, String date2) throws Exception {
         try{
             List<Pedido> pedidos = pedidoRepository.searchPedidosBetweenDates(date1, date2);

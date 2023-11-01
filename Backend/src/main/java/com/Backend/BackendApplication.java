@@ -13,9 +13,12 @@ import java.math.BigDecimal;
 import java.time.LocalTime;
 import java.util.Date;
 
+import static com.Backend.enums.EstadoPedido.COMPLETADO;
 import static com.Backend.enums.EstadoPedido.PAGADO;
 import static com.Backend.enums.FormaPago.EFECTIVO;
+import static com.Backend.enums.FormaPago.MERCADO_PAGO;
 import static com.Backend.enums.TipoEnvio.DELIVERY;
+import static com.Backend.enums.TipoEnvio.TAKE_AWAY;
 
 
 @SpringBootApplication
@@ -154,6 +157,19 @@ public class BackendApplication {
 //			detallePedido.setArticuloManufacturado(artMan);
 //			detallePedido.setPedido(pedido);
 
+
+			Pedido pedido2 = new Pedido();
+			pedido2.setCliente(cliente1);
+
+			pedido2.setDomicilio(domi);
+			pedido2.setEstado(COMPLETADO);
+			pedido2.setFechaPedido(new Date(1-10-2023));
+			pedido2.setFormaPago(MERCADO_PAGO);
+			pedido2.setHoraEstimadaFinalizacion(LocalTime.now());//ver
+			pedido2.setTipoEnvio(TAKE_AWAY);
+			pedido2.setTotal(BigDecimal.valueOf(3500));
+			pedido2.setTotalCosto(BigDecimal.valueOf(1200));
+			pedidoRepository.save(pedido2);
 
 			Factura factura = new Factura();
 			factura.setFormaPago(EFECTIVO);

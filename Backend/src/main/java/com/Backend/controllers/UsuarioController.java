@@ -2,6 +2,7 @@ package com.Backend.controllers;
 
 
 import com.Backend.entities.Usuario;
+import com.Backend.enums.EstadoPedido;
 import com.Backend.services.UsuarioServiceImpl;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
@@ -28,6 +29,21 @@ public class UsuarioController extends BaseControllerImpl<Usuario, UsuarioServic
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(("{\"error\": \"" + e.getMessage() + "\"}"));
         }
     }
-
+    @GetMapping("/searchPedidosActivos")
+    public ResponseEntity<?> searchPedidosActivos(){
+        try{
+            return ResponseEntity.status(HttpStatus.OK).body(service.searchPedidosActivos());
+        } catch(Exception e){
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(("{\"error\": \"" + e.getMessage() + "\"}"));
+        }
+    }
+    @PatchMapping ("/cambiarEstadosPedido")
+    ResponseEntity<?> cambiarEstadosPedido (@RequestParam Long idPedido, EstadoPedido nuevoEstado) {
+        try {
+            return ResponseEntity.status(HttpStatus.OK).body(service.cambiarEstadoPedido(idPedido,nuevoEstado));
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(("{\"error\": \"" + e.getMessage() + "\"}"));
+        }
+    }
 }
 
