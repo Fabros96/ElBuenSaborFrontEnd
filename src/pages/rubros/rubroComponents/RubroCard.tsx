@@ -1,11 +1,12 @@
 import React from 'react'
 import './RubroCard.css'
 import ModifyRubro from './ModifyRubro'
-import { Rubro } from '../../../models/rubro'
+import { Rubro } from '../../../types/rubro'
+import { rubroService } from '../../../services/rubroService'
 
 interface Props {
    rubro: Rubro
-   handleFormEditSubmit: (rubro: Rubro) => void
+   modifyFormCallback: (rubro: Rubro) => void
 }
 function RubroCard(props: Props) {
    return (
@@ -15,7 +16,11 @@ function RubroCard(props: Props) {
             <div className="cardStatus">{props.rubro.status}</div>
          </div>
          <div className="cardEdit">
-            <ModifyRubro handleFormEditSubmit={() => props.handleFormEditSubmit(props.rubro)} />
+            <ModifyRubro
+               modifyFormCallback={props.modifyFormCallback}
+               rubro={props.rubro}
+               service={rubroService.updateRubroArticulo}
+            />
          </div>
       </div>
    )
