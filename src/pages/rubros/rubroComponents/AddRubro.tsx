@@ -6,11 +6,13 @@ import DialogTitle from '@mui/material/DialogTitle'
 import AddIcon from '@mui/icons-material/Add'
 import './AddRubro.css'
 import DropDown from './DropDown'
-import { Rubro } from '../../../models/rubro'
+import { Rubro } from '../../../types/rubro'
 
 interface Props {
    handleFormSubmit: (rubro: Rubro) => void
+   service: (name: String, status: String) => Promise<Rubro>
 }
+
 export default function AddRubro(props: Props) {
    const [open, setOpen] = React.useState(false)
    const [name, setName] = React.useState('')
@@ -24,11 +26,13 @@ export default function AddRubro(props: Props) {
       setOpen(false)
    }
 
-   function handleSubmit(event: React.SyntheticEvent<HTMLFormElement>) {
+   async function handleSubmit(event: React.SyntheticEvent<HTMLFormElement>) {
       event.preventDefault()
-      //const test = await postRubro(name, status)
-      const rubro = { name: name, status: status }
-      props.handleFormSubmit(rubro)
+
+      const response = await props.service(name, status)
+      if (response) {
+         props.handleFormSubmit(response)
+      }
       handleClose()
    }
    return (
@@ -45,7 +49,7 @@ export default function AddRubro(props: Props) {
          >
             <DialogTitle> Añadir nuevo rubro: </DialogTitle>
             <DialogContent>
-               <form onSubmit={(e) => handleSubmit(e)}>
+               <form onSubmit={e => handleSubmit(e)}>
                   <p>Ingrese el nombre del rubro:</p>
                   <br />
                   <input

@@ -5,16 +5,18 @@ import DialogContent from '@mui/material/DialogContent'
 import DialogTitle from '@mui/material/DialogTitle'
 import './ModifyRubro.css'
 import DropDown from '../rubroComponents/DropDown'
-import { Rubro } from '../../../models/rubro'
+import { Rubro } from '../../../types/rubro'
 import EditIcon from '@mui/icons-material/Edit'
 
 interface Props {
-   handleFormEditSubmit: (rubro: Rubro) => void
+   modifyFormCallback: (rubro: Rubro) => void
+   rubro: Rubro
+   service: (id: String, name: String, status: String) => Promise<Rubro>
 }
 export default function ModifyRubro(props: Props) {
    const [open, setOpen] = React.useState(false)
-   const [name, setName] = React.useState('')
-   const [status, setStatus] = React.useState('')
+   const [name, setName] = React.useState(props.rubro.name)
+   const [status, setStatus] = React.useState(props.rubro.status)
 
    const handleClickOpen = () => {
       setOpen(true)
@@ -24,11 +26,15 @@ export default function ModifyRubro(props: Props) {
       setOpen(false)
    }
 
-   function handleSubmit(event: React.SyntheticEvent<HTMLFormElement>) {
+   async function handleSubmit(event: React.SyntheticEvent<HTMLFormElement>) {
       event.preventDefault()
-      //const test = await postRubro(name, status)
-      const rubro = { name: name, status: status }
-      props.handleFormEditSubmit(rubro)
+      // Manda la requesta al backend
+      const response = await props.service(props.rubro.id.toString(), name, status)
+
+      // Response -> Rubro actualizado (q te lo manda el backend)
+      if (response) {
+         props.modifyFormCallback(response)
+      }
       handleClose()
    }
    return (
@@ -45,7 +51,7 @@ export default function ModifyRubro(props: Props) {
          >
             <DialogTitle> Modificar rubro: </DialogTitle>
             <DialogContent>
-               <form onSubmit={(e) => handleSubmit(e)}>
+               <form onSubmit={e => handleSubmit(e)}>
                   <p>Nombre del rubro:</p>
                   <br />
                   <input
