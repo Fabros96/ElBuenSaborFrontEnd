@@ -5,10 +5,10 @@
     text-decoration: none;
     color: black;
     font-size: 1.3rem;
-    font-family:sans-serif 
-
+    font-family:sans-serif;
+    
 }
-h2{
+.tituloproducto{
     font-size: 1.3rem;
     font-weight: bold;
     margin-top: 3%;
