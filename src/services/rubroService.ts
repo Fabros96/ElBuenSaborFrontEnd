@@ -1,6 +1,6 @@
 import { Rubro } from '../types/rubro'
 
-const BASE_URL_INSUMO = 'http://localhost:8080/api/v1/rubroArticulos'
+const BASE_URL_INSUMO = 'http://localhost:8080/npapi/v1/rubroArticulos'
 const BASE_URL_ARTICULO = 'http://localhost:8080/api/v1/tipoArticulos'
 
 export const rubroService = {
