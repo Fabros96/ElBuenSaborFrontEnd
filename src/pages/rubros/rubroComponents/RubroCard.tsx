@@ -12,8 +12,8 @@ function RubroCard(props: Props) {
    return (
       <div className="cardContainer">
          <div className="cardInfo">
-            <div className="cardName">{props.rubro.name}</div>
-            <div className="cardStatus">{props.rubro.status}</div>
+            <div className="cardName">{props.rubro.denominacion}</div>
+            <div className="cardStatus">{props.rubro.estadoRubro}</div>
          </div>
          <div className="cardEdit">
             <ModifyRubro

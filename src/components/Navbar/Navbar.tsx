@@ -1,3 +1,4 @@
+//@ts-nocheck
 import * as React from 'react'
 import { useState, useEffect } from 'react'
 import './Navbar.css'
@@ -73,7 +74,7 @@ function SearchAppBar() {
 /* ----------------------\ESTO ES PARA LA BARRA DE BUSQUEDA-------------------------- */
 /* ----------------------ESTO ES LA APP EN SI-------------------------- */
 
-export function ElBuenSaborNavbar() {
+export const ElBuenSaborNavbar = () => {
    const { user } = useAuth()
    const [show, setShow] = useState(false)
 
@@ -99,8 +100,9 @@ export function ElBuenSaborNavbar() {
          className={`navbar-contenedor-gral mostrar-navbar ${show && 'ocultar-navbar'}`}
       >
          <div
-            className={`NavContainer contenedor-nav desktop-nav-container mostrar-navbar ${show &&
-               'ocultar-navbar'}`}
+            className={`NavContainer contenedor-nav desktop-nav-container mostrar-navbar ${
+               show && 'ocultar-navbar'
+            }`}
          >
             <Navbar.Collapse id="basic-navbar-nav">
                <a href="/">

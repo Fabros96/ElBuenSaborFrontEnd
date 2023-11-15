@@ -48,6 +48,7 @@
 }
 
 .contenedor-nav {
+   width: 100%;
    margin: 0px;
    align-items: stretch !important;
 }
@@ -106,13 +107,13 @@
    align-content: center !important;
    flex-wrap: nowrap !important;
 }
-@media (min-width: 600px){
-   .css-1orzy9s{
+@media (min-width: 600px) {
+   .css-1orzy9s {
       width: 55% !important;
    }
 }
 
-@media(max-width:599px){
+@media (max-width: 599px) {
    .css-1orzy9s {
       width: auto !important;
    }
@@ -141,10 +142,11 @@
 .navbar-toggler {
    background-color: #ffffff59 !important;
 }
-.navbar-collapse,.collapse,.show{
+.navbar-collapse,
+.collapse,
+.show {
    z-index: 100;
 }
-
 
 .fixed-top {
    position: fixed;
@@ -159,23 +161,19 @@
    width: -webkit-fill-available;
 }
 
-
-
 @media (min-width: 769px) {
    .mobile-nav-container {
       visibility: hidden !important;
       display: none !important;
    }
-
 }
 
 @media (max-width: 769px) {
-
-   .navbar-collapse{
+   .navbar-collapse {
       text-align: end;
       background-color: #363636a2;
    }
-   
+
    .ocultar-navbar {
       visibility: visible !important;
       opacity: 1 !important;
@@ -184,7 +182,7 @@
       margin-left: 15px;
       margin-right: 15px;
    }
-   
+
    .opciones-flotantes {
       margin-top: 60px;
       position: absolute;
@@ -213,24 +211,23 @@
 }
 
 @media (max-width: 320px) {
-   .opciones-flotantes{
+   .opciones-flotantes {
       left: -12px !important; /* -15px cuando haga click */
    }
 }
-@media (min-width:321) and (max-width: 375px) {
-   .opciones-flotantes{
+@media (min-width: 321) and (max-width: 375px) {
+   .opciones-flotantes {
       left: -12px !important; /* -15px cuando haga click */
    }
 }
 
-
-@media (max-width: 425px)  and (min-width:376) {
-   .opciones-flotantes{
+@media (max-width: 425px) and (min-width: 376) {
+   .opciones-flotantes {
       left: -12px !important; /* -15px cuando haga click */
    }
 }
-@media (max-width: 768px)  and (min-width:426) {
-   .opciones-flotantes{
+@media (max-width: 768px) and (min-width: 426) {
+   .opciones-flotantes {
       left: -45px !important; /* -15px cuando haga click */
    }
 }

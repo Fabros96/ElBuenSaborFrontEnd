@@ -1,12 +1,13 @@
 import { Rubro } from '../types/rubro'
 
-const BASE_URL_INSUMO = 'http://localhost:8080/npapi/v1/rubroArticulos'
+const BASE_URL_INSUMO = 'http://localhost:8080/api/v1/rubroArticulos'
 const BASE_URL_ARTICULO = 'http://localhost:8080/api/v1/tipoArticulos'
 
 export const rubroService = {
+   //ARTICULOS
    getRubrosArticulos: async (): Promise<Rubro[]> => {
       try {
-         console.log('acaaa')
+         console.log('getting rubros')
          const response = await fetch(BASE_URL_ARTICULO)
          if (!response.ok) {
             throw new Error(`Failed to fetch rubros. Status: ${response.status}`)
@@ -22,7 +23,8 @@ export const rubroService = {
    // METODO PARA CREAR UN PRODUCTO NUEVO PASANDOLE LOS DATOS
    createRubroArticulo: async (name: String, status: String): Promise<Rubro> => {
       try {
-         console.log('hola joaco')
+         console.log('creating rubros')
+
          console.log(BASE_URL_ARTICULO)
          const response = await fetch(BASE_URL_ARTICULO, {
             method: 'POST',
@@ -30,8 +32,8 @@ export const rubroService = {
                'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-               denominacion: 'rubroDenominacion',
-               estadoRubro: 'ALTA',
+               denominacion: name,
+               estadoRubro: status,
             }),
          })
          console.log(response)
@@ -50,7 +52,7 @@ export const rubroService = {
    // METODO PARA ACTUALIZAR UN PRODUCTO PASANDOLE UN ID_PRODUCTO y LOS DATOS DEL PRODUCTO NUEVOS
    updateRubroArticulo: async (id: String, name: String, status: String): Promise<Rubro> => {
       try {
-         const response = await fetch(`${BASE_URL_ARTICULO}/products/${id}`, {
+         const response = await fetch(`${BASE_URL_ARTICULO}/${id}`, {
             method: 'PUT',
             headers: {
                'Content-Type': 'application/json',
@@ -70,18 +72,70 @@ export const rubroService = {
       }
    },
 
-   // METODO PARA ELIMINAR UN PRODUCTO PASANDOLE UN ID_PRODUCTO
-   deleteRubroArticulo: async (id: number): Promise<void> => {
+   // INSUMOS
+   getRubrosInsumos: async (): Promise<Rubro[]> => {
       try {
-         const response = await fetch(`${BASE_URL_ARTICULO}/products/${id}`, {
-            method: 'DELETE',
+         console.log('getting rubros')
+         const response = await fetch(BASE_URL_INSUMO)
+         if (!response.ok) {
+            throw new Error(`Failed to fetch rubros. Status: ${response.status}`)
+         }
+         const data = await response.json()
+         return data
+      } catch (error) {
+         console.error('Error fetching rubros:', error)
+         throw error
+      }
+   },
+
+   // METODO PARA CREAR UN PRODUCTO NUEVO PASANDOLE LOS DATOS
+   createRubroInsumo: async (name: String, status: String): Promise<Rubro> => {
+      try {
+         console.log('creating rubros')
+
+         console.log(BASE_URL_INSUMO)
+         const response = await fetch(BASE_URL_INSUMO, {
+            method: 'POST',
+            headers: {
+               'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+               denominacion: name,
+               estadoRubro: status,
+            }),
+         })
+         console.log(response)
+         if (!response.ok) {
+            throw new Error(`Failed to create rubro. Status: ${response.status}`)
+         }
+
+         const data = await response.json()
+         return data
+      } catch (error) {
+         console.error('Error creating rubro:', error)
+         throw error
+      }
+   },
+
+   // METODO PARA ACTUALIZAR UN PRODUCTO PASANDOLE UN ID_PRODUCTO y LOS DATOS DEL PRODUCTO NUEVOS
+   updateRubroInsumo: async (id: String, name: String, status: String): Promise<Rubro> => {
+      try {
+         const response = await fetch(`${BASE_URL_INSUMO}/${id}`, {
+            method: 'PUT',
+            headers: {
+               'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ id, denominacion: name, estadoRubro: status }),
          })
 
          if (!response.ok) {
-            throw new Error(`Failed to delete rubro. Status: ${response.status}`)
+            throw new Error(`Failed to update rubro. Status: ${response.status}`)
          }
+
+         const data = await response.json()
+         return data
       } catch (error) {
-         console.error('Error deleting rubro:', error)
+         console.error('Error updating rubro:', error)
          throw error
       }
    },

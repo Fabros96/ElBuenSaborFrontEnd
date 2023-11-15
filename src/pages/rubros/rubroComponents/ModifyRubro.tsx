@@ -5,8 +5,8 @@ import DialogContent from '@mui/material/DialogContent'
 import DialogTitle from '@mui/material/DialogTitle'
 import './ModifyRubro.css'
 import DropDown from '../rubroComponents/DropDown'
-import { Rubro } from '../../../types/rubro'
 import EditIcon from '@mui/icons-material/Edit'
+import { Rubro } from '../../../types/rubro'
 
 interface Props {
    modifyFormCallback: (rubro: Rubro) => void
@@ -15,8 +15,8 @@ interface Props {
 }
 export default function ModifyRubro(props: Props) {
    const [open, setOpen] = React.useState(false)
-   const [name, setName] = React.useState(props.rubro.name)
-   const [status, setStatus] = React.useState(props.rubro.status)
+   const [name, setName] = React.useState(props.rubro.denominacion)
+   const [status, setStatus] = React.useState(props.rubro.estadoRubro)
 
    const handleClickOpen = () => {
       setOpen(true)
@@ -51,7 +51,7 @@ export default function ModifyRubro(props: Props) {
          >
             <DialogTitle> Modificar rubro: </DialogTitle>
             <DialogContent>
-               <form onSubmit={e => handleSubmit(e)}>
+               <form onSubmit={(e) => handleSubmit(e)}>
                   <p>Nombre del rubro:</p>
                   <br />
                   <input

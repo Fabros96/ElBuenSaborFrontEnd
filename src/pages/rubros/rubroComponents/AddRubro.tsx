@@ -9,7 +9,7 @@ import DropDown from './DropDown'
 import { Rubro } from '../../../types/rubro'
 
 interface Props {
-   handleFormSubmit: (rubro: Rubro) => void
+   successCallback: (rubro: Rubro) => void
    service: (name: String, status: String) => Promise<Rubro>
 }
 
@@ -29,9 +29,10 @@ export default function AddRubro(props: Props) {
    async function handleSubmit(event: React.SyntheticEvent<HTMLFormElement>) {
       event.preventDefault()
 
+      // Mandas la request Editar -> Rta: Rubro editado
       const response = await props.service(name, status)
       if (response) {
-         props.handleFormSubmit(response)
+         props.successCallback(response)
       }
       handleClose()
    }
@@ -49,7 +50,7 @@ export default function AddRubro(props: Props) {
          >
             <DialogTitle> Añadir nuevo rubro: </DialogTitle>
             <DialogContent>
-               <form onSubmit={e => handleSubmit(e)}>
+               <form onSubmit={(e) => handleSubmit(e)}>
                   <p>Ingrese el nombre del rubro:</p>
                   <br />
                   <input

@@ -1,205 +1,204 @@
 /* Estilos para el formulario y sus elementos */
 form {
-    display: grid; /* Muestra el formulario como una cuadrícula */
+   display: grid; /* Muestra el formulario como una cuadrícula */
 }
 /* Estilos para los enlaces */
 a {
-    text-decoration: none; /* Elimina la subrayado de los enlaces */
-    color: #5995ED; /* Establece el color de los enlaces a blanco */
+   text-decoration: none; /* Elimina la subrayado de los enlaces */
+   color: #5995ed; /* Establece el color de los enlaces a blanco */
 }
 a:hover {
-    color: #000000;
-    text-decoration: underline; /* Cambia el color del enlace a un tono de azul al pasar el mouse */
+   color: #000000;
+   text-decoration: underline; /* Cambia el color del enlace a un tono de azul al pasar el mouse */
 }
 /* Estilos para el texto en negrita */
 b {
-    font-size: 1.1rem; /* Establece el tamaño de fuente para el texto en negrita */
+   font-size: 1.1rem; /* Establece el tamaño de fuente para el texto en negrita */
 }
 /* Estilos para el contenedor */
 .container {
-    display: flex;
-    flex-direction: column; /* Organiza los elementos en una columna */
+   display: flex;
+   flex-direction: column; /* Organiza los elementos en una columna */
 }
 
 /* Estilos para centrar elementos */
 .center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+   display: flex;
+   justify-content: center;
+   align-items: center;
 }
 /* Estilos para la respuesta en pantallas pequeñas */
 /* Estilos para la imagen del logotipo */
 .logoimagen {
-    position: absolute;
-    z-index: 1;
-    top: 20%; /* Ajusta la posición desde arriba */
-    left: 34%; /* Ajusta la posición desde la izquierda */
-    transform: translate(-50%, -50%); /* Centra la imagen */
+   position: absolute;
+   z-index: 1;
+   top: 20%; /* Ajusta la posición desde arriba */
+   left: 34%; /* Ajusta la posición desde la izquierda */
+   transform: translate(-50%, -50%); /* Centra la imagen */
 }
 
 /* Estilos para la imagen de inicio de sesión */
 .loginImage {
-    position: relative;
-    left: 8.5%;
-    opacity: 0.5;
-    line-height: 0;
-    box-shadow: 0px 13px 16px 10px #cbced1;
+   position: relative;
+   left: 8.5%;
+   opacity: 0.5;
+   line-height: 0;
+   box-shadow: 0px 13px 16px 10px #cbced1;
 }
 /* Estilos para la sección de inicio de sesión */
 .login {
-    width: 50%;
-    height: 32rem;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 2.3rem;
+   width: 50%;
+   height: 32rem;
+   justify-content: center;
+   align-items: center;
+   margin-bottom: 2.3rem;
 }
 
 /* Estilos para el formulario de inicio de sesión */
 .formSesion {
-    color: #000000;
-    width: 70%;
-    height: 90%;
-    border-radius: 15px;
-    background-color: #EAEAEA;
-    padding: 25px;
-    margin-left: 17%;
-    margin-top: 1rem;
-    box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #fff;
+   color: #000000;
+   width: 100%;
+   border-radius: 15px;
+   background-color: #eaeaea;
+   padding: 25px;
+   margin-left: 17%;
+   margin-top: 1rem;
+   box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #fff;
 }
 
 /* Estilos para el encabezado del formulario */
 .formSesion h1 {
-    font-size: 30px;
-    margin-bottom: 10px;
-    color: #000000;
-    position: relative;
-    margin-top: 0px;
+   font-size: 30px;
+   margin-bottom: 10px;
+   color: #000000;
+   position: relative;
+   margin-top: 0px;
 }
 
 .formSesion h1::after {
-    content: '';
-    width: 30px;
-    height: 4px;
-    border-radius: 3px;
-    background: #5995ED;
-    position: absolute;
-    bottom: -12px;
-    left: 50%;
-    transform: translate(-50%);
+   content: '';
+   width: 30px;
+   height: 4px;
+   border-radius: 3px;
+   background: #5995ed;
+   position: absolute;
+   bottom: -12px;
+   left: 50%;
+   transform: translate(-50%);
 }
 
 /* Estilos para el texto "Iniciar Sesión" */
 .iniciarSesion {
-    text-align: center;
-    font-weight: 600;
-    font-size: 1.4rem;
+   text-align: center;
+   font-weight: 600;
+   font-size: 1.4rem;
 }
 /* Estilos para los campos de entrada */
-.input,.inputconf {
-    position: relative;
-    border-radius: 6px;
-    border-color: transparent;
-    display: flex;
-    flex-direction: column;
-    height: fit-content;
-    padding: 10px 0px 10px;
-    padding-right: 18px;   
+.input,
+.inputconf {
+   position: relative;
+   border-radius: 6px;
+   border-color: transparent;
+   display: flex;
+   flex-direction: column;
+   height: fit-content;
+   padding: 10px 0px 10px;
+   padding-right: 18px;
 }
-.input i,.inputconf i{
-    position: absolute;
-    margin-right: 10px;
-    color: #5995ED;
-    left: 93%; /* Ajusta la posición desde la izquierda */
-    transform: translateY(-170%); /* Centra la imagen */
-    
+.input i,
+.inputconf i {
+   position: absolute;
+   margin-right: 10px;
+   color: #5995ed;
+   left: 93%; /* Ajusta la posición desde la izquierda */
+   transform: translateY(-170%); /* Centra la imagen */
 }
-.inputconf p, .input p{
-    font-size: 0.7rem;
+.inputconf p,
+.input p {
+   font-size: 0.7rem;
 }
-.inputconf p, .input p {
-    margin: 0px
+.inputconf p,
+.input p {
+   margin: 0px;
 }
 
 /* Estilos para el texto "Olvidaste tu contraseña" */
 .olvContradiv {
-    margin: 0;
-    text-align: center;
-    padding: 0.3rem;
+   margin: 0;
+   text-align: center;
+   padding: 0.3rem;
 }
 /* Estilos para el campo de botones */
 .btn-field {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
 }
 /* Estilos para los botones */
 .btn-field button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 20px;
-    border-color: transparent;
-    height: 2rem;
-    width: 30%;
-    box-shadow: 2px 2px 4px black;
-    cursor: pointer;
-    color: #fff;
-    background-color: #5995ED;
-    
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border-radius: 20px;
+   border-color: transparent;
+   height: 2rem;
+   width: 30%;
+   box-shadow: 2px 2px 4px black;
+   cursor: pointer;
+   color: #fff;
+   background-color: #5995ed;
 }
 .btn-field button:hover {
-    color: #000000;
+   color: #000000;
 }
 /* Estilos para el inicio de sesión con Google */
 .iniciarGoogle {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    line-height: 0px;
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   align-items: center;
 }
 .googleTexto {
-    display: inline-block;
-    padding-right: 1%;
+   display: inline-block;
+   padding-right: 1%;
 }
 .botonGoogle {
-    border-color: transparent;
-    margin-top: 0.5rem;
-    background-color: #EAEAEA;
-    cursor: pointer;
-    color: #5995ED;
-    
+   border-color: transparent;
+   margin-top: 0.5rem;
+   background-color: #eaeaea;
+   cursor: pointer;
+   color: #5995ed;
 }
 /* Estilos para el span */
 span {
-    position: relative;
-    cursor: pointer;
+   position: relative;
+   cursor: pointer;
 }
 @media (max-width: 650px) {
-    .formSesion{
-        width: 120%;
-        height: 100%;
-        padding: 3rem;
-        margin:0 auto;
-       }
-    .container{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding-right:7rem; 
-       }
-    .loginImage {
-        display: none; /* Oculta loginImage en pantallas pequeñas */
-    }
-    .logoimagen {
-        display: none; /* Oculta logoimagen en pantallas pequeñas */
-    }
-    .iniciarGoogle{
-        line-height: normal;
-    }
-    .formSesion h1{
-        font-size: 1.6rem;
-        margin-bottom: 3px;
-    }
+   .formSesion {
+      width: 120%;
+      height: 100%;
+      padding: 3rem;
+      margin: 0 auto;
+   }
+   .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-right: 7rem;
+   }
+   .loginImage {
+      display: none; /* Oculta loginImage en pantallas pequeñas */
+   }
+   .logoimagen {
+      display: none; /* Oculta logoimagen en pantallas pequeñas */
+   }
+   .iniciarGoogle {
+      line-height: normal;
+   }
+   .formSesion h1 {
+      font-size: 1.6rem;
+      margin-bottom: 3px;
+   }
 }
