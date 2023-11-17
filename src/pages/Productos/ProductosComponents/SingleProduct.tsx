@@ -15,6 +15,8 @@ const SingleProduct = (props: Props) => {
                <img src={props.producto.urlImagen} alt="imagen producto" />
                <div className="productName">{props.producto.denominacion}</div>
                <div className="productPrice">{props.producto.precioVenta}</div>
+               <div>{props.producto.precioVenta}</div>
+               <div>{props.producto.estado}</div>
             </div>
             <div className="productEdit">
                <ModifyProducto

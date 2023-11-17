@@ -78,7 +78,7 @@ export default function AddRubro(props: Props) {
                      required
                      name="descripcion"
                      value={descripcion}
-                     onChange={(e: React.ChangeEvent<HTMLInputElement>) => setDenominacion(e.target.value)}
+                     onChange={(e: React.ChangeEvent<HTMLInputElement>) => setDescripcion(e.target.value)}
                   />
                   <br />
                   <p>Ingrese el precio:</p>
@@ -89,7 +89,9 @@ export default function AddRubro(props: Props) {
                      required
                      name="precioVenta"
                      value={precioVenta}
-                     onChange={(e: React.ChangeEvent<HTMLInputElement>) => setDenominacion(e.target.value)}
+                     onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                        setPrecioVenta(parseInt(e.target.value))
+                     }
                   />
                   <br />
                   <p>Ingrese url de una imagen:</p>
@@ -100,7 +102,7 @@ export default function AddRubro(props: Props) {
                      required
                      name="urlImagen"
                      value={urlImagen}
-                     onChange={(e: React.ChangeEvent<HTMLInputElement>) => setDenominacion(e.target.value)}
+                     onChange={(e: React.ChangeEvent<HTMLInputElement>) => setUrlImagen(e.target.value)}
                   />
                   <br />
                   <p>Ingrese el estado del rubro</p>
