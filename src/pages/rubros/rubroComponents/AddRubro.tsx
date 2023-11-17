@@ -5,8 +5,8 @@ import DialogContent from '@mui/material/DialogContent'
 import DialogTitle from '@mui/material/DialogTitle'
 import AddIcon from '@mui/icons-material/Add'
 import './AddRubro.css'
-import DropDown from './DropDown'
 import { Rubro } from '../../../types/rubro'
+import DropDown from '../../../components/DropDown'
 
 interface Props {
    successCallback: (rubro: Rubro) => void
@@ -50,7 +50,7 @@ export default function AddRubro(props: Props) {
          >
             <DialogTitle> Añadir nuevo rubro: </DialogTitle>
             <DialogContent>
-               <form onSubmit={(e) => handleSubmit(e)}>
+               <form onSubmit={e => handleSubmit(e)}>
                   <p>Ingrese el nombre del rubro:</p>
                   <br />
                   <input

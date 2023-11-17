@@ -35,6 +35,7 @@ export const AuthService = {
          })
 
          const loginResponse = (await response.json()) as LoginResponse
+         console.log('token: ' + loginResponse.token)
 
          return loginResponse
       } catch (error) {

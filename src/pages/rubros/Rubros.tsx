@@ -46,7 +46,7 @@ function Rubros() {
       // Crear un nuevo objeto que es igual al rubroProducto
       const rubrosCopias = [...rubroProdcuto]
 
-      const index = rubroProdcuto.findIndex((r) => r.id === rubro.id)
+      const index = rubroProdcuto.findIndex(r => r.id === rubro.id)
       rubrosCopias[index] = rubro
 
       setRubroProducto(rubrosCopias)
@@ -56,7 +56,7 @@ function Rubros() {
       // Crear un nuevo objeto que es igual al rubroInsumo
       const rubrosCopias = [...rubroInsumo]
 
-      const index = rubroInsumo.findIndex((r) => r.id === rubro.id)
+      const index = rubroInsumo.findIndex(r => r.id === rubro.id)
       rubrosCopias[index] = rubro
 
       setRubroInsumo(rubrosCopias)
@@ -92,7 +92,7 @@ function Rubros() {
                   />
                </div>
                <div className="RubroList">
-                  {rubroProdcuto.map((rubro) => (
+                  {rubroProdcuto.map(rubro => (
                      <RubroCard key={rubro.id} rubro={rubro} modifyFormCallback={modifyRubroCallback} />
                   ))}
                </div>

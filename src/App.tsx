@@ -12,6 +12,7 @@ import Footer from './components/Footer/Footer'
 import Rubros from './pages/rubros/Rubros'
 import { AuthProvider } from './context/authContext'
 import { ElBuenSaborNavbar } from './components/Navbar/Navbar'
+import TablaProducto from './pages/Productos/ProductosComponents/TablaProducto'
 
 function App() {
    return (
@@ -23,7 +24,7 @@ function App() {
                <Route path="/rubros" element={<Rubros />} />
                <Route path="/empleados" element={<EmpleadoDatos />} />
                <Route path="/rankingprod" element={<RankingProd />} />
-               <Route path="/productos" element={<Productos />} />
+               <Route path="/productos" element={<TablaProducto />} />
                {/* <Route path='/change_password' element={<Change_password/>}/> */}
                <Route path="/" element={<Home />} />
             </Routes>

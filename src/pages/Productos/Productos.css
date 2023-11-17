@@ -1,4 +1,4 @@
-*{
+/* *{
     font-family: sans-serif;
 }
 .top a{
@@ -34,9 +34,9 @@ margin-right: 2%;
     color:grey;
     width: 95%;
     margin-left: 2.5%;
-    max-height: 500px; /* Altura máxima para mostrar el scroll en el cuerpo de la tabla */
-    overflow-y: auto; /* Desplazamiento vertical solo en el cuerpo de la tabla */
-}
+    max-height: 500px; /* Altura máxima para mostrar el scroll en el cuerpo de la tabla 
+    /* overflow-y: auto; /* Desplazamiento vertical solo en el cuerpo de la tabla 
+
 .form-control{
     background-color: #f3f3f2;
 }
@@ -52,4 +52,4 @@ margin-right: 2%;
     max-height: 730px;
     overflow-y: auto;
 }
-}
+}  */

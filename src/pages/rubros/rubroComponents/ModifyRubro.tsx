@@ -4,9 +4,9 @@ import Dialog from '@mui/material/Dialog'
 import DialogContent from '@mui/material/DialogContent'
 import DialogTitle from '@mui/material/DialogTitle'
 import './ModifyRubro.css'
-import DropDown from '../rubroComponents/DropDown'
 import EditIcon from '@mui/icons-material/Edit'
 import { Rubro } from '../../../types/rubro'
+import DropDown from '../../../components/DropDown'
 
 interface Props {
    modifyFormCallback: (rubro: Rubro) => void
@@ -51,7 +51,7 @@ export default function ModifyRubro(props: Props) {
          >
             <DialogTitle> Modificar rubro: </DialogTitle>
             <DialogContent>
-               <form onSubmit={(e) => handleSubmit(e)}>
+               <form onSubmit={e => handleSubmit(e)}>
                   <p>Nombre del rubro:</p>
                   <br />
                   <input

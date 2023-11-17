@@ -1,11 +1,15 @@
+import { Rubro } from './rubro'
+
 export interface Producto {
-    image:string
-    name: string
-    type:string
-    category:string
-    stock:number
-    status: string
-    price:number
-    id: number 
- }
- 
+   id: number
+   fechaAlta?: Date
+   fechaModificacion?: Date
+   denominacion: string
+   descripcion: string
+   tiempoEstimadoCocina?: number
+   precioVenta: number
+   costo?: number
+   urlImagen: string
+   tipoArticulo?: Rubro
+   estado: string
+}

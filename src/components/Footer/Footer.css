@@ -4,9 +4,10 @@
    color: white;
 }
 .shadow {
-   margin-top: auto;
    width: auto;
    min-width: 100vw;
+   position: absolute;
+   bottom: 0;
 }
 
 .shadow a {
