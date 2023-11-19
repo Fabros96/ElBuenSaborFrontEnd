@@ -28,8 +28,9 @@ function App() {
                {/* <Route path='/change_password' element={<Change_password/>}/> */}
                <Route path="/" element={<Home />} />
             </Routes>
-            <Footer />
+            
          </BrowserRouter>
+         <Footer />
       </AuthProvider>
    )
 }
