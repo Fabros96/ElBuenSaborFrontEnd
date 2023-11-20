@@ -115,7 +115,7 @@ export const Home = () => {
                   width: '100%',
                }}
             />
-            <div className="filtros">
+            {/* <div className="filtros">
                Promociones:{' '}
                <button onClick={handleclickPromo} className="buttonFilter">
                   {tickPromo}
@@ -124,172 +124,13 @@ export const Home = () => {
                <button onClick={handleclickBebidas} className="buttonFilter">
                   {tickBebidas}
                </button>
-            </div>
+            </div> */}
             <div className="productos">
-               {promo === true && (
-                  <>
-                     <h2 className="promoTexto">Promociones</h2>
-
-                     <div className="promociones">
-                        {products.map(product => (
-                           <ArticuloHome key={product.id} producto={product} />
-                        ))}
-
-                        {/* <div>
-                           <ArticuloHome
-                              image="https://recetasdeusa.com/wp-content/uploads/2022/05/Hamburguesa-americana-1-scaled.jpg"
-                              nombre="hamburguesa"
-                              precio={2500}
-                              descripcion="Hamburguesa god cocinada con pancetita y queso tremendo siuuuuuuuuu"
-                           />
-                        </div>
-                        <div>
-                           <ArticuloHome
-                              image="https://recetasdeusa.com/wp-content/uploads/2022/05/Hamburguesa-americana-1-scaled.jpg"
-                              nombre="hamburguesa"
-                              precio={2500}
-                              descripcion="Hamburguesa god cocinada con pancetita y queso tremendo siuuuuuuuuu"
-                           />
-                        </div>
-                        <div>
-                           <ArticuloHome
-                              image="https://recetasdeusa.com/wp-content/uploads/2022/05/Hamburguesa-americana-1-scaled.jpg"
-                              nombre="hamburguesa"
-                              precio={2500}
-                              descripcion="Hamburguesa god cocinada con pancetita y queso tremendo siuuuuuuuuu"
-                           />
-                        </div>
-                        <div>
-                           <ArticuloHome
-                              image="https://recetasdeusa.com/wp-content/uploads/2022/05/Hamburguesa-americana-1-scaled.jpg"
-                              nombre="hamburguesa"
-                              precio={2500}
-                              descripcion="Hamburguesa god cocinada con pancetita y queso tremendo siuuuuuuuuu"
-                           />
-                        </div>
-                        <div>
-                           <ArticuloHome
-                              image="https://recetasdeusa.com/wp-content/uploads/2022/05/Hamburguesa-americana-1-scaled.jpg"
-                              nombre="hamburguesa"
-                              precio={2500}
-                              descripcion="Hamburguesa god cocinada con pancetita y queso tremendo siuuuuuuuuu"
-                           />
-                        </div>
-                        <div>
-                           <ArticuloHome
-                              image="https://recetasdeusa.com/wp-content/uploads/2022/05/Hamburguesa-americana-1-scaled.jpg"
-                              nombre="hamburguesa"
-                              precio={2500}
-                              descripcion="Hamburguesa god cocinada con pancetita y queso tremendo siuuuuuuuuu"
-                           />
-                        </div>
-                        <div>
-                           <ArticuloHome
-                              image="https://recetasdeusa.com/wp-content/uploads/2022/05/Hamburguesa-americana-1-scaled.jpg"
-                              nombre="hamburguesa"
-                              precio={2500}
-                              descripcion="Hamburguesa god cocinada con pancetita y queso tremendo siuuuuuuuuu"
-                           />
-                        </div>
-                        <div>
-                           <ArticuloHome
-                              image="https://recetasdeusa.com/wp-content/uploads/2022/05/Hamburguesa-americana-1-scaled.jpg"
-                              nombre="hamburguesa"
-                              precio={2500}
-                              descripcion="Hamburguesa god cocinada con pancetita y queso tremendo siuuuuuuuuu"
-                           />
-                        </div>
-                        <div>
-                           <ArticuloHome
-                                    image="https://recetasdeusa.com/wp-content/uploads/2022/05/Hamburguesa-americana-1-scaled.jpg"
-                        nombre="hamburguesa"
-                              precio={2500}
-                              descripcion="Hamburguesa god cocinada con pancetita y queso tremendo siuuuuuuuuu"
-                           /> 
-                         </div> */}
-                     </div>
-                  </>
-               )}
-               {/*------------------------------------------------- BEBIDAS -------------------------------------------------------*/}
-               {/* {bebidas === true && (
-                  <>
-                     <h2 className="promoTexto">Bebidas</h2>
-                     <div className="promociones">
-                        <div>
-                           <ArticuloHome
-                              image="https://deukoizarra.com/wp-content/uploads/2023/04/CocaCola-vidirio-350ml.jpg"
-                              nombre="Coca Cola 350cc"
-                              precio={450}
-                              descripcion="coca coca vidrio fresca"
-                           />
-                        </div>
-                        <div>
-                           <ArticuloHome
-                              image="https://deukoizarra.com/wp-content/uploads/2023/04/CocaCola-vidirio-350ml.jpg"
-                              nombre="Coca Cola 350cc"
-                              precio={450}
-                              descripcion="coca coca vidrio fresca"
-                           />
-                        </div>
-                        <div>
-                           <ArticuloHome
-                              image="https://deukoizarra.com/wp-content/uploads/2023/04/CocaCola-vidirio-350ml.jpg"
-                              nombre="Coca Cola 350cc"
-                              precio={450}
-                              descripcion="coca coca vidrio fresca"
-                           />
-                        </div>
-                        <div>
-                           <ArticuloHome
-                              image="https://deukoizarra.com/wp-content/uploads/2023/04/CocaCola-vidirio-350ml.jpg"
-                              nombre="Coca Cola 350cc"
-                              precio={450}
-                              descripcion="coca coca vidrio fresca"
-                           />
-                        </div>
-                        <div>
-                           <ArticuloHome
-                              image="https://deukoizarra.com/wp-content/uploads/2023/04/CocaCola-vidirio-350ml.jpg"
-                              nombre="Coca Cola 350cc"
-                              precio={450}
-                              descripcion="coca coca vidrio fresca"
-                           />
-                        </div>
-                        <div>
-                           <ArticuloHome
-                              image="https://deukoizarra.com/wp-content/uploads/2023/04/CocaCola-vidirio-350ml.jpg"
-                              nombre="Coca Cola 350cc"
-                              precio={450}
-                              descripcion="coca coca vidrio fresca"
-                           />
-                        </div>
-                        <div>
-                           <ArticuloHome
-                              image="https://deukoizarra.com/wp-content/uploads/2023/04/CocaCola-vidirio-350ml.jpg"
-                              nombre="Coca Cola 350cc"
-                              precio={450}
-                              descripcion="coca coca vidrio fresca"
-                           />
-                        </div>
-                        <div>
-                           <ArticuloHome
-                              image="https://deukoizarra.com/wp-content/uploads/2023/04/CocaCola-vidirio-350ml.jpg"
-                              nombre="Coca Cola 350cc"
-                              precio={450}
-                              descripcion="coca coca vidrio fresca"
-                           />
-                        </div>
-                        <div>
-                           <ArticuloHome
-                              image="https://deukoizarra.com/wp-content/uploads/2023/04/CocaCola-vidirio-350ml.jpg"
-                              nombre="Coca Cola 350cc"
-                              precio={450}
-                              descripcion="coca coca vidrio fresca"
-                           />
-                        </div>
-                     </div>
-                  </>
-               )} */}
+               <div className="promociones">
+                  {products.map(product => (
+                     <ArticuloHome key={product.id} producto={product} />
+                  ))}
+               </div>
             </div>
          </div>
       </div>
