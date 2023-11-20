@@ -15,10 +15,16 @@
    justify-content: space-between;
    width: 100%;
    align-items: center;
-   margin-right: 9%;  
+   margin-right: 9%;
 }
-.productPrice, .productEstado, .productName, .productId{
+.productPrice,
+.productEstado,
+.productName,
+.productId {
    width: 100px;
-   
 }
-
+.productEdit {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
