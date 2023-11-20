@@ -9,12 +9,10 @@ import RemoveIcon from '@mui/icons-material/Remove'
 import './ArticuloHomePopup'
 import './ArticuloHome.css'
 import PopUp from './ArticuloHomePopup'
+import { Producto } from '../../../types/producto'
 
 interface Props {
-   image: any
-   nombre: string
-   precio: number
-   descripcion: string | any
+   producto: Producto
 }
 export default function ArticuloHome(props: Props) {
    const [count, setCount] = React.useState(0)
@@ -22,12 +20,12 @@ export default function ArticuloHome(props: Props) {
    return (
       <div className="articulo">
          <div className="image">
-            <img src={props.image} className="artImage" alt=";" />
+            <img src={props.producto.urlImagen} className="artImage" alt=";" />
          </div>
-         <div className="nombre">{props.nombre}</div>
-         <div className="precio">${props.precio}</div>
+         <div className="nombre">{props.producto.denominacion}</div>
+         <div className="precio">${props.producto.precioVenta}</div>
          <button className="popUp">
-            <PopUp descripcion={props.descripcion} imagen={props.image}></PopUp>
+            <PopUp descripcion={props.producto.descripcion} imagen={props.producto.urlImagen}></PopUp>
          </button>
          <div className="cartFooter">
             <div>

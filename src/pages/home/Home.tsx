@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './Home.css'
 import ArticuloHome from './homeComponents/ArticuloHome'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
@@ -7,12 +7,14 @@ import ChecklistIcon from '@mui/icons-material/Checklist'
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney'
 import MopedIcon from '@mui/icons-material/Moped'
 import RestaurantIcon from '@mui/icons-material/Restaurant'
+import { Producto } from '../../types/producto'
+import { ProductoService } from '../../services/productoService'
 // import { Scrollbars } from 'react-custom-scrollbars'
 
 export const Home = () => {
    const [promo, setPromo] = React.useState(true)
    const [tickPromo, setTickPromo] = useState('✓')
-
+   const [products, setProducts] = useState<Producto[]>([])
    const [bebidas, setbebidas] = React.useState(true)
    const [tickBebidas, setTickBebidas] = useState('✓')
 
@@ -24,7 +26,14 @@ export const Home = () => {
          setTickPromo('✓')
       }
    }
+   useEffect(() => {
+      getProducts()
+   }, [])
 
+   const getProducts = async () => {
+      const response = await ProductoService.getProducts()
+      setProducts(response)
+   }
    function handleclickBebidas() {
       setbebidas(!bebidas)
       if (bebidas === true) {
@@ -35,7 +44,6 @@ export const Home = () => {
    }
    return (
       <div className="container">
-         <div className="header"></div>
          <div className="welcomeView">
             <h1 className="title">El buen sabor</h1>
             <div className="lema">
@@ -123,7 +131,11 @@ export const Home = () => {
                      <h2 className="promoTexto">Promociones</h2>
 
                      <div className="promociones">
-                        <div>
+                        {products.map(product => (
+                           <ArticuloHome key={product.id} producto={product} />
+                        ))}
+
+                        {/* <div>
                            <ArticuloHome
                               image="https://recetasdeusa.com/wp-content/uploads/2022/05/Hamburguesa-americana-1-scaled.jpg"
                               nombre="hamburguesa"
@@ -189,17 +201,17 @@ export const Home = () => {
                         </div>
                         <div>
                            <ArticuloHome
-                              image="https://recetasdeusa.com/wp-content/uploads/2022/05/Hamburguesa-americana-1-scaled.jpg"
-                              nombre="hamburguesa"
+                                    image="https://recetasdeusa.com/wp-content/uploads/2022/05/Hamburguesa-americana-1-scaled.jpg"
+                        nombre="hamburguesa"
                               precio={2500}
                               descripcion="Hamburguesa god cocinada con pancetita y queso tremendo siuuuuuuuuu"
-                           />
-                        </div>
+                           /> 
+                         </div> */}
                      </div>
                   </>
                )}
                {/*------------------------------------------------- BEBIDAS -------------------------------------------------------*/}
-               {bebidas === true && (
+               {/* {bebidas === true && (
                   <>
                      <h2 className="promoTexto">Bebidas</h2>
                      <div className="promociones">
@@ -277,7 +289,7 @@ export const Home = () => {
                         </div>
                      </div>
                   </>
-               )}
+               )} */}
             </div>
          </div>
       </div>
