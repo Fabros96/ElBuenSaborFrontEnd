@@ -22,6 +22,7 @@
 .productName,
 .productId {
    width: 100px;
+   font-weight: bold;
 }
 .productEdit {
    display: flex;
