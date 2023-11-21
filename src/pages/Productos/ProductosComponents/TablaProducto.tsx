@@ -5,7 +5,7 @@ import { ProductoService } from '../../../services/productoService'
 import Loader from '../../../components/Loader/Loader'
 // import { ModalType } from '../../../types/modalTypes'
 // import ProductModal from './ModalProducto'
-import { Button, Table } from 'react-bootstrap'
+//import { Button, Table } from 'react-bootstrap'
 import './tablaProductos.css'
 import SingleProduct from './SingleProduct'
 import AddProducto from './addProducto'
@@ -66,15 +66,7 @@ function TablaProducto() {
             <h2 className="titulo">Productos</h2>
             <AddProducto successCallback={createProductoCallBack} service={ProductoService.createProduct} />
          </div>
-         <div className="productHeader">
-            <h4>Imagen</h4>
-            <h4>Id</h4>
-            <div className='productHeader2'>
-            <h4>Descripcion</h4>
-            <h4>Precio</h4>
-            <h4>Estado</h4>
-            </div>
-         </div>
+   
          <div className="productsContainer">
             {products.map(product => (
                <SingleProduct

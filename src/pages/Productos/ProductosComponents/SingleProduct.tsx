@@ -13,10 +13,10 @@ const SingleProduct = (props: Props) => {
          <div className="singleProductContainer">
             <div className="productInfo">
                <img src={props.producto.urlImagen} alt="imagen producto" className="image" />
-               <div className="productId">{props.producto.id}</div>
-               <div className="productName">{props.producto.denominacion}</div>
-               <div className="productPrice">{props.producto.precioVenta}</div>
-               <div className="productEstado">{props.producto.estado}</div>
+               <div className="productId">id: {props.producto.id}</div>
+               <div className="productName">nombre: {props.producto.denominacion}</div>
+               <div className="productPrice">precioVenta: {props.producto.precioVenta}</div>
+               <div className="productEstado">estado: {props.producto.estado}</div>
             </div>
             <div className="productEdit">
                <ModifyProducto
