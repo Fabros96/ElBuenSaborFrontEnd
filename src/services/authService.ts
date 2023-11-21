@@ -1,5 +1,5 @@
 type LoginResponse = {
-   token: String
+   token: string
    username: String
 }
 
@@ -17,7 +17,9 @@ export const AuthService = {
          })
 
          const loginResponse = (await response.json()) as LoginResponse
-
+         localStorage.setItem('token', loginResponse.token)
+         console.log('token: ' + loginResponse.token)
+         console.log('login response: ' + loginResponse)
          return loginResponse
       } catch (error) {
          throw error
