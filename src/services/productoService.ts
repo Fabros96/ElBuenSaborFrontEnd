@@ -19,7 +19,7 @@ export const ProductoService = {
    },
    //METODO PARA OBTENER UN SOLO PRODUCTO PASANDOLE EL ID_PRODUCTO
    getProduct: async (id: number): Promise<Producto> => {
-      const response = await fetch(`${BASE_URL_PRODUCTO}/artuculoManufacturados/${id}`)
+      const response = await fetch(`${BASE_URL_PRODUCTO}/articuloManufacturados/${id}`)
       const data = await response.json()
 
       return data
