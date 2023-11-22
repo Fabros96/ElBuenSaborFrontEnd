@@ -84,6 +84,10 @@
 .centro-navbar-item {
    font-size: x-large;
 }
+.centro-navbar-itemrubro {
+   margin-top: 14px;
+   font-size: larger;
+}
 
 .dropdown-menu.show {
    background-color: #242424;

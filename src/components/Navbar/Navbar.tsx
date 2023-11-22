@@ -100,9 +100,8 @@ export const ElBuenSaborNavbar = () => {
          className={`navbar-contenedor-gral mostrar-navbar ${show && 'ocultar-navbar'}`}
       >
          <div
-            className={`NavContainer contenedor-nav desktop-nav-container mostrar-navbar ${
-               show && 'ocultar-navbar'
-            }`}
+            className={`NavContainer contenedor-nav desktop-nav-container mostrar-navbar ${show &&
+               'ocultar-navbar'}`}
          >
             <Navbar.Collapse id="basic-navbar-nav">
                <a href="/">
@@ -122,7 +121,7 @@ export const ElBuenSaborNavbar = () => {
                   {/* <Nav.Link href="/Promos" className="centro-navbar-item">
                      Promos
                   </Nav.Link> */}
-                  <Link to={'/rubros'} className="centro-navbar-item">
+                  <Link to={'/rubros'} className="centro-navbar-itemrubro">
                      Rubros
                   </Link>
                   {/* -------------Btn de Favoritos SOLO CUANDO INICIO SESION //Falta esa parte------------- */}

@@ -140,8 +140,8 @@ export const RankingClientes: React.FC = () => {
    function cambiarbtn() {
       //CAMBIA EL BTN SUPERIOR DERECHO
       let elem1 = document.getElementById('label')
-      elem1 ?(elem1.style.visibility = 'hidden') : ""
-      
+      elem1 ? (elem1.style.visibility = 'hidden') : ''
+
       switch (btnprops) {
          case 1:
             setButtonText('Listo')
@@ -163,7 +163,7 @@ export const RankingClientes: React.FC = () => {
             setButtonColor('error')
             setVariant('outlined')
             setButtonDisabled(false)
-            elem1 ?(elem1.style.visibility = 'visible') : ""
+            elem1 ? (elem1.style.visibility = 'visible') : ''
             break
          default:
             setButtonText('Cargando...')
@@ -173,7 +173,7 @@ export const RankingClientes: React.FC = () => {
             break
       }
    }
-   
+
    function formatear(date: Date) {
       let h
       var d = new Date(date),
@@ -193,9 +193,9 @@ export const RankingClientes: React.FC = () => {
 
    return (
       <>
-         <nav className="navbar bg-body-white">
+         <div className="filtrosTitle">
             <div className="container-fluid">
-               <div className="top">
+               {/* <div className="top">
                   <a href="#">
                      <svg
                         xmlns="http:www.w3.org/2000/svg"
@@ -209,8 +209,8 @@ export const RankingClientes: React.FC = () => {
                      </svg>
                      Volver
                   </a>
-               </div>
-               <span className="nombre">
+               </div> */}
+               {/* <span className="nombre">
                   <svg
                      xmlns="http:www.w3.org/2000/svg"
                      width="26"
@@ -226,23 +226,27 @@ export const RankingClientes: React.FC = () => {
                      />
                   </svg>
                   Nombre y Apellido
-               </span>
+               </span> */}
             </div>
-            <hr className="separador" />
-
-            <h2 className="txt-Productosmas">Ranking Clientes</h2>
-            <span className="mx-3" style={{ display: 'inline-flex' }}>
-               Periodo:
-               <select name="Periodo" id="Periodo" onChange={habilitardp} defaultValue={'s'}>
-                  <option value="h">Hoy</option>
-                  <option value="1">1 Semana</option>
-                  <option value="2">2 Semanas</option>
-                  <option value="3">3 Semanas</option>
-                  <option value="4">1 Mes</option>
-                  <option value="i">Intervalo</option>
-                  <option value="s">Siempre</option>
-               </select>
-               <span id="label" style={{ visibility: 'hidden', margin: '5px', fontFamily: 'cursive' }}>Para refrescar cambie el periodo y vuelva</span>
+            <div>Ranking Clientes</div>
+            Periodo:
+            <select
+               name="Periodo"
+               id="Periodo"
+               onChange={habilitardp}
+               defaultValue={'s'}
+               className="selectDate"
+            >
+               <option value="h">Hoy</option>
+               <option value="1">1 Semana</option>
+               <option value="2">2 Semanas</option>
+               <option value="3">3 Semanas</option>
+               <option value="4">1 Mes</option>
+               <option value="i">Intervalo</option>
+               <option value="s">Siempre</option>
+            </select>
+            <span id="label" style={{ visibility: 'hidden', margin: '5px', fontFamily: 'cursive' }}>
+               Para refrescar cambie el periodo y vuelva
             </span>
             <span id="datepick" style={{ visibility: 'hidden', padding: '0' }}>
                {/* ACA */}
@@ -277,7 +281,7 @@ export const RankingClientes: React.FC = () => {
                   </Button>
                }
             </span>
-         </nav>
+         </div>
          <div className="tabla">
             <table id="example" className="table table-striped" style={{ width: '100%' }}>
                <thead>

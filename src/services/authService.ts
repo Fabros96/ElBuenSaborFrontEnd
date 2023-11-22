@@ -37,7 +37,7 @@ export const AuthService = {
          })
 
          const loginResponse = (await response.json()) as LoginResponse
-         console.log('token: ' + loginResponse.token)
+         localStorage.setItem('token ', loginResponse.token)
 
          return loginResponse
       } catch (error) {
