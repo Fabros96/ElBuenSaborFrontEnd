@@ -24,17 +24,3 @@
 .productHeader .productHeader2 {
    display: flex;
 }
-.productHeader h4 {
-   width: 100px;
-   margin-left: 8.5%;
-   justify-content: space-between;
-   font-size: 1.2rem;
-   font-weight: bold;
-}
-.productHeader .productHeader2 {
-   margin-left: 5%;
-}
-.productHeader .productHeader2 h4 {
-   justify-content: space-between;
-   margin-right: 43%;
-}
