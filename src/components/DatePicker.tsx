@@ -36,7 +36,7 @@ export function ResponsiveDateRangePickers() {
          <DemoContainer components={['DateRangePicker']}>
             <DemoItem component="DateRangePicker">
                <DateRangePicker
-                  onChange={(x, event) => setFechas(x, event)}
+                  onChange={(x: any, event: any) => setFechas(x, event)}
                   disableFuture={true}
                   label="Intervalo"
                   slots={{ field: SingleInputDateRangeField }}

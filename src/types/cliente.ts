@@ -1,5 +1,4 @@
-import { Domicilio } from "./domicilio";
-import { Pedido } from "./pedido";
+
 
 
 
@@ -14,8 +13,7 @@ export interface Cliente {
     fechaHoraBajaCliente: string | null;
     estadoCliente: string | null;
     
-    domicilioList: Domicilio[];
-    pedidos: Pedido[];
+
  }  
 
  export interface dtoCliente {
@@ -24,6 +22,5 @@ export interface Cliente {
     clienteId: number;
     nombre: string;
     apellido: string;
-    pedidos: Pedido[];
 
  }  

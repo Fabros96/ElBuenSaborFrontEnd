@@ -1,6 +1,4 @@
 import { Cliente, dtoCliente } from '../types/cliente';
-import { Domicilio } from '../types/domicilio';
-import { Pedido } from '../types/pedido';
 import { Producto } from '../types/producto'
 
 const BASE_URL_CLIENTE = 'http://localhost:8080/api/v1'
@@ -29,7 +27,7 @@ export const ClienteService = {
         return data
     },
     //METODO PARA CREAR UN CLIENTE NUEVO PASANDOLE LOS DATOS
-    createCliente: async (nom: string, ape: string, tel: string, em: string, fHAltaCliente: string, estCli: "CLIENTE", domList: Domicilio[], pedList: Pedido[]): Promise<Producto> => {
+    createCliente: async (nom: string, ape: string, tel: string, em: string, fHAltaCliente: string, estCli: "CLIENTE"): Promise<Producto> => {
         const response = await fetch(`${BASE_URL_CLIENTE}/clientes`, {
             method: 'POST',
             headers: {
@@ -42,8 +40,6 @@ export const ClienteService = {
                 email: em,
                 estadoCliente: estCli,
 
-                domicilioList: domList,
-                pedidoList: pedList
             }),
         })
 
@@ -59,8 +55,7 @@ export const ClienteService = {
         em: string,
         fHAltaCliente: string,
         estCli: "CLIENTE",
-        domList: Domicilio[],
-        pedList: Pedido[]
+
 
     ): Promise<Cliente> => {
         const response = await fetch(`${BASE_URL_CLIENTE}/clientes/${id}`, {
@@ -76,8 +71,7 @@ export const ClienteService = {
                 email: em,
                 estadoCliente: estCli,
 
-                domicilioList: domList,
-                pedidoList: pedList
+
             }),
         })
 

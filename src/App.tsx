@@ -13,6 +13,7 @@ import Rubros from './pages/rubros/Rubros'
 import { AuthProvider } from './context/authContext'
 import { ElBuenSaborNavbar } from './components/Navbar/Navbar'
 import TablaProducto from './pages/Productos/ProductosComponents/TablaProducto'
+import { RankingClientes } from './pages/RankingCliente/RankingClientes'
 
 function App() {
    return (
@@ -25,6 +26,7 @@ function App() {
                <Route path="/empleados" element={<EmpleadoDatos />} />
                <Route path="/rankingprod" element={<RankingProd />} />
                <Route path="/productos" element={<TablaProducto />} />
+               <Route path="/rankingcli" element={<RankingClientes />} />
                {/* <Route path='/change_password' element={<Change_password/>}/> */}
                <Route path="/" element={<Home />} />
             </Routes>
